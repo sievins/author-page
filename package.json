@@ -1,7 +1,9 @@
 {
   "name": "author-page",
   "version": "0.1.0",
-  "private": true,
+  "description": "Alice Ievins' author page",
+  "repository": "git@github.com:sievins/author-page.git",
+  "author": "Samuel Ievins <sievins8012@gmail.com>",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
