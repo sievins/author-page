@@ -1,16 +1,16 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles'
 import Corner from './corner'
-import { useStyles } from '../hooks'
 
-const styles = {
+const useStyles = makeStyles({
   container: {
     flexGrow: 1,
   },
-}
+})
 
 export default function Corners() {
-  const classes = useStyles(styles)
+  const classes = useStyles()
 
   return (
     <Grid container className={classes.container}>

@@ -1,9 +1,9 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles'
 import Avatar from './avatar'
 import Corners from './corners'
-import { useStyles } from './hooks'
 
-const styles = {
+const useStyles = makeStyles({
   app: {
     backgroundColor: '#e2e4e9',
     minHeight: '100vh',
@@ -13,10 +13,10 @@ const styles = {
     fontSize: 'calc(10px + 2vmin)',
     color: '#282c34',
   }
-}
+})
 
 function App() {
-  const classes = useStyles(styles)
+  const classes = useStyles()
 
   return (
     <div className={classes.app}>

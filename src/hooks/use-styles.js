@@ -1,8 +1,7 @@
-import { makeStyles } from '@material-ui/core/styles'
 import useScreenSize from './use-screen-size'
 
-export default function useStyles(stylesDelegate) {
+export default function useStyles(useMuiStyles) {
   const isSmallScreen = useScreenSize()
-  const classes = makeStyles(stylesDelegate)({ isSmallScreen })
+  const classes = useMuiStyles({ isSmallScreen })
   return classes
 }

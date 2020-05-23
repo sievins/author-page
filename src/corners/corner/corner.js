@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
 import divider from '../../assets/images/divider.png'
 import { useStyles } from '../../hooks'
 
-const stylesDelegate = (theme) => ({
+const useMuiStyles = makeStyles((theme) => ({
   paper: ({ isSmallScreen }) => ({
     padding: theme.spacing(2),
     width: isSmallScreen ? theme.spacing(10) : theme.spacing(60),
@@ -27,11 +28,11 @@ const stylesDelegate = (theme) => ({
     width: 'inherit',
     marginBottom: '-36px',
   },
-})
+}))
 
 export default function Corner({ title, authorName }) {
   const [elevation, setElevation] = useState(1)
-  const classes = useStyles(stylesDelegate)
+  const classes = useStyles(useMuiStyles)
 
   return (
     <Grid item xs={6}>
