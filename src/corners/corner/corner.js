@@ -17,8 +17,8 @@ const useMuiStyles = makeStyles((theme) => ({
     cursor: 'pointer',
   }),
   h1: {
-    fontFamily: 'intro-script',
-    fontSize: 'xx-large',
+    fontFamily: 'belepotan-italic',
+    fontSize: 'x-large',
   },
   h2: {
     fontFamily: 'intro-script',
