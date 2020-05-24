@@ -13,7 +13,19 @@ code {
 }
 
 @font-face {
+  font-family: 'belepotan-italic';
+  src: url('assets/fonts/belepotan-italic.otf') format('opentype'),
+  url('assets/fonts/belepotan-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'belepotan-normal';
+  src: url('assets/fonts/belepotan-normal.otf') format('opentype'),
+  url('assets/fonts/belepotan-normal.otf') format('opentype');
+}
+
+@font-face {
   font-family: 'intro-script';
-  src: url('assets/fonts/IntroScript.otf') format('opentype'),
-  url('assets/fonts/IntroScript.otf') format('opentype');
+  src: url('assets/fonts/intro-script.otf') format('opentype'),
+  url('assets/fonts/intro-script.otf') format('opentype');
 }
