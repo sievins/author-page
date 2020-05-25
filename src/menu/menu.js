@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Button from '@material-ui/core/Button'
+import { useStyles, useScreenSize } from '../hooks'
 
 const showNewsletterSubscription = () => {
   document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;'
@@ -22,7 +23,7 @@ const showNewsletterSubscription = () => {
   )
 }
 
-const useStyles = makeStyles(theme => ({
+const useMuiStyles = makeStyles(theme => ({
   bar: {
     backgroundColor: 'white',
     height: 48,
@@ -30,10 +31,13 @@ const useStyles = makeStyles(theme => ({
   home: {
     display: 'none',
   },
-  tab: {
-    width: theme.spacing(40),
-    maxWidth: theme.spacing(40),
-    fontFamily: 'belepotan-italic',
+  tab: ({ isLargeScreen }) => {
+    const width = isLargeScreen ? 40 : 25
+    return {
+      width: theme.spacing(width),
+      maxWidth: theme.spacing(width),
+      fontFamily: 'belepotan-italic',
+    }
   },
   button: {
     fontFamily: 'belepotan-italic',
@@ -49,7 +53,11 @@ Menu.propTypes = {
 }
 
 export default function Menu({ activeTab, setActiveTab }) {
-  const classes = useStyles()
+  const classes = useStyles(useMuiStyles)
+  const { isExtraSmallScreen, isSmallScreen, isLargeScreen } = useScreenSize()
+
+  const showNewsletterButton = !isExtraSmallScreen && !isSmallScreen
+  const newsletterText = isLargeScreen ? 'Subscribe to newsletter' : 'Newsletter'
 
   const handleChange = (event, tab) => {
     setActiveTab(tab)
@@ -63,9 +71,11 @@ export default function Menu({ activeTab, setActiveTab }) {
         <Tab label="Fantasy Corner" className={classes.tab} />
         <Tab label="About Alice" className={classes.tab} />
       </Tabs>
-      <Button onClick={showNewsletterSubscription} variant="outlined" color="secondary" className={classes.button}>
-        Subscribe to newsletter
-      </Button>
+      { showNewsletterButton &&
+        <Button onClick={showNewsletterSubscription} variant="outlined" color="secondary" className={classes.button}>
+          {newsletterText}
+        </Button>
+      }
     </AppBar>
   )
 }
