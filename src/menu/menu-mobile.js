@@ -12,7 +12,6 @@ import Typography from '@material-ui/core/Typography'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
-import { showNewsletterSubscription } from './subscriber'
 
 const useStyles = makeStyles((theme) => ({
   bar: {
@@ -71,7 +70,7 @@ export default function MenuMobile({ activeTab, setActiveTab }) {
         <Item primary="Fantasy corner" tabIndex={2} />
         <Item primary="About" tabIndex={3} />
         <Divider />
-        <ListItem button onClick={showNewsletterSubscription}>
+        <ListItem button onClick={()=> window.open("https://mailchi.mp/0e212a879f8f/alicegent", "_blank")}>
           <ListItemText primary="Newsletter" className={classes.newsletter} classes={{ primary: classes.font }} />
         </ListItem>
       </List>
