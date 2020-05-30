@@ -35,9 +35,6 @@ const useStyles = makeStyles((theme) => ({
   newsletter: {
     color: theme.palette.secondary.main,
   },
-  toolbarText: {
-    marginBottom: 4,
-  },
 }))
 
 MenuMobile.propTypes = {
@@ -90,7 +87,7 @@ export default function MenuMobile({ activeTab, setActiveTab }) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.toolbarText} classes={{ root: classes.font }}>
+          <Typography variant="h6" classes={{ root: classes.font }}>
             {
               activeTab === 1 ? 'Christian Corner' :
               activeTab === 2 ? 'Fantasy Corner' :
