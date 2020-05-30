@@ -8,14 +8,22 @@ import divider from '../../assets/images/divider.png'
 import { useStyles } from '../../hooks'
 
 const useMuiStyles = makeStyles((theme) => ({
-  paper: ({ isSmallScreen }) => ({
-    padding: theme.spacing(2),
-    width: isSmallScreen ? theme.spacing(10) : theme.spacing(60),
-    textAlign: 'center',
-    color: theme.palette.text.primary,
-    margin: 'auto',
-    cursor: 'pointer',
-  }),
+  paper: ({ isExtraSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen }) => {
+    const width =
+      isLargeScreen ? 60 :
+      isMediumScreen ? 48 :
+      isSmallScreen ? 30 : 28
+
+    return {
+      padding: theme.spacing(2),
+      width: theme.spacing(width),
+      marginBottom: isExtraSmallScreen && theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.primary,
+      margin: 'auto',
+      cursor: 'pointer',
+    }
+  },
   h1: {
     fontFamily: 'belepotan-italic',
     fontSize: 'x-large',
@@ -24,9 +32,16 @@ const useMuiStyles = makeStyles((theme) => ({
     fontFamily: 'intro-script',
     fontSize: 'x-large',
   },
-  divider: {
-    width: 'inherit',
-    marginBottom: '-36px',
+  divider: ({ isSmallScreen, isMediumScreen, isLargeScreen }) => {
+    const marginBottom =
+      isLargeScreen ? -36 :
+      isMediumScreen ? -30 :
+      isSmallScreen ? -14 : -16
+
+    return {
+      width: 'inherit',
+      marginBottom,
+    }
   },
 }))
 
@@ -35,7 +50,7 @@ export default function Corner({ title, authorName }) {
   const classes = useStyles(useMuiStyles)
 
   return (
-    <Grid item xs={6}>
+    <Grid item xs={12} sm={6}>
       <Paper
         elevation={elevation}
         onMouseEnter={() => setElevation(6)}
