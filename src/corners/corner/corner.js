@@ -54,13 +54,13 @@ const useMuiStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Corner({ title, authorName }) {
+export default function Corner({ title, authorName, onClick }) {
   const [elevation, setElevation] = useState(1)
   const classes = useStyles(useMuiStyles)
 
   return (
     <Grid item xs={12} sm={6} className={classes.grid}>
-      <ButtonBase className={classes.button}>
+      <ButtonBase className={classes.button} onClick={onClick}>
         <Paper
           elevation={elevation}
           onMouseEnter={() => setElevation(6)}
@@ -83,5 +83,6 @@ export default function Corner({ title, authorName }) {
 Corner.propTypes = {
   title: PropTypes.string.isRequired,
   authorName: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 }
 

@@ -32,12 +32,23 @@ const useMuiStyles = makeStyles(theme => ({
   },
 }))
 
+const tabPropType = PropTypes.shape({
+  text: PropTypes.string.isRequired,
+  activeIndex: PropTypes.number.isRequired,
+}).isRequired
+
 Menu.propTypes = {
+  tabs: PropTypes.shape({
+    home: tabPropType,
+    christianCorner: tabPropType,
+    fantasyCorner: tabPropType,
+    aboutAlice: tabPropType,
+  }).isRequired,
   activeTab: PropTypes.number.isRequired,
   setActiveTab: PropTypes.func.isRequired,
 }
 
-export default function Menu({ activeTab, setActiveTab }) {
+export default function Menu({ tabs, activeTab, setActiveTab }) {
   const classes = useStyles(useMuiStyles)
   const { isExtraSmallScreen, isSmallScreen, isLargeScreen } = useScreenSize()
 
@@ -51,10 +62,10 @@ export default function Menu({ activeTab, setActiveTab }) {
   return (
     <AppBar position="static" className={classes.bar}>
       <Tabs value={activeTab} onChange={handleChange} centered>
-        <Tab label="Home" className={classes.home} />
-        <Tab label="Christian Corner" className={classes.tab} />
-        <Tab label="Fantasy Corner" className={classes.tab} />
-        <Tab label="About Alice" className={classes.tab} />
+        <Tab label={tabs.home.text} className={classes.home} />
+        <Tab label={tabs.christianCorner.text} className={classes.tab} />
+        <Tab label={tabs.fantasyCorner.text} className={classes.tab} />
+        <Tab label={tabs.aboutAlice.text} className={classes.tab} />
       </Tabs>
       { showNewsletterButton &&
         <Button onClick={showNewsletterSubscription} variant="outlined" color="secondary" className={classes.button}>

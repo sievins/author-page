@@ -18,6 +18,25 @@ const useStyles = makeStyles({
   }
 })
 
+const tabs = {
+  home: {
+    text: 'Home',
+    activeIndex: 0,
+  },
+  christianCorner: {
+    text: 'Christian Corner',
+    activeIndex: 1,
+  },
+  fantasyCorner: {
+    text: 'Fantasy Corner',
+    activeIndex: 2,
+  },
+  aboutAlice: {
+    text: 'About Alice',
+    activeIndex: 3,
+  },
+}
+
 function App() {
   const classes = useStyles()
   const [activeTab, setActiveTab] = useState(0)
@@ -25,9 +44,9 @@ function App() {
   return (
     <div className={classes.app}>
       <ThemeProvider theme={theme}>
-        <Menu activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Menu tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
         <Avatar />
-        <Corners />
+        <Corners tabs={tabs} setActiveTab={setActiveTab} />
       </ThemeProvider>
     </div>
   )
