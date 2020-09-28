@@ -3,8 +3,8 @@ import { ThemeProvider } from '@material-ui/styles'
 import { makeStyles } from '@material-ui/core/styles'
 import theme from './theme'
 import Menu from './menu'
-import Avatar from './avatar'
-import Corners from './corners'
+import Banner from './banner'
+import Home from './home'
 
 const useStyles = makeStyles({
   app: {
@@ -12,7 +12,6 @@ const useStyles = makeStyles({
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     fontSize: 'calc(10px + 2vmin)',
     color: '#282c34',
   }
@@ -37,7 +36,7 @@ const tabs = {
   },
 }
 
-function App() {
+export default function App() {
   const classes = useStyles()
   const [activeTab, setActiveTab] = useState(0)
 
@@ -45,11 +44,9 @@ function App() {
     <div className={classes.app}>
       <ThemeProvider theme={theme}>
         <Menu tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-        <Avatar />
-        <Corners tabs={tabs} setActiveTab={setActiveTab} />
+        <Banner />
+        <Home tabs={tabs} setActiveTab={setActiveTab} />
       </ThemeProvider>
     </div>
   )
 }
-
-export default App

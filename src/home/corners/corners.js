@@ -2,15 +2,8 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Corner from './corner'
-import { useStyles } from '../hooks'
+import { useStyles } from '../../hooks'
 import PropTypes from 'prop-types'
-
-const useMuiStyles = makeStyles({
-  container: ({ isExtraSmallScreen }) => ({
-    flexGrow: 1,
-    flexDirection: isExtraSmallScreen && 'column',
-  }),
-})
 
 const tabPropType = PropTypes.shape({
   text: PropTypes.string.isRequired,
@@ -25,6 +18,23 @@ Corners.propTypes = {
   setActiveTab: PropTypes.func.isRequired,
 }
 
+const useMuiStyles = makeStyles((theme) => ({
+  container: {
+    flexDirection: 'column',
+    alignSelf: 'center',
+  },
+  divider: ({ isLargeScreen, isMediumScreen, isSmallScreen }) => {
+    const height =
+      isLargeScreen ? 6 :
+      isMediumScreen ? 6 :
+      isSmallScreen ? 3 : 3
+
+    return {
+      minHeight: theme.spacing(height),
+    }
+  },
+}))
+
 export default function Corners({ tabs, setActiveTab }) {
   const classes = useStyles(useMuiStyles)
 
@@ -35,6 +45,7 @@ export default function Corners({ tabs, setActiveTab }) {
         authorName="Alice Gent"
         onClick={() => setActiveTab(tabs.christianCorner.activeIndex)}
       />
+      <div className={classes.divider} />
       <Corner
         title={tabs.fantasyCorner.text}
         authorName="Alice Ivinya"

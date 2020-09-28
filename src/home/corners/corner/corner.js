@@ -5,8 +5,8 @@ import ButtonBase from '@material-ui/core/ButtonBase'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
-import divider from '../../assets/images/divider.png'
-import { useStyles } from '../../hooks'
+import divider from '../../../assets/images/divider.png'
+import { useStyles } from '../../../hooks'
 
 const useMuiStyles = makeStyles((theme) => ({
   grid: {
@@ -17,8 +17,10 @@ const useMuiStyles = makeStyles((theme) => ({
     margin: '0 auto',
     marginBottom: isExtraSmallScreen && theme.spacing(2),
   }),
-  paper: ({ isExtraSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen }) => {
+  paper: ({ isExtraSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen, isPortrait }) => {
     const width =
+      isMediumScreen && isPortrait ? 60 : // iPad Pro
+      isSmallScreen && isPortrait ? 48 : // iPad
       isLargeScreen ? 60 :
       isMediumScreen ? 48 :
       isSmallScreen ? 30 :
@@ -59,7 +61,7 @@ export default function Corner({ title, authorName, onClick }) {
   const classes = useStyles(useMuiStyles)
 
   return (
-    <Grid item xs={12} sm={6} className={classes.grid}>
+    <Grid item xs={12} sm={12} className={classes.grid}>
       <ButtonBase className={classes.button} onClick={onClick}>
         <Paper
           elevation={elevation}
