@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Corner from './corner'
-import { useStyles } from '../../hooks'
+import { useStyles } from '../../../hooks'
 import PropTypes from 'prop-types'
 
 const tabPropType = PropTypes.shape({

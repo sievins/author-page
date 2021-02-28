@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { ThemeProvider } from '@material-ui/styles'
 import { makeStyles } from '@material-ui/core/styles'
+import ContentHeightContext from './content-height-context'
 import theme from './theme'
-import Menu from './menu'
-import Banner from './banner'
-import Home from './home'
+import TopBar from './top-bar'
+import Routes from './routes'
+import { useWindowSize } from './hooks'
 
 const useStyles = makeStyles({
   app: {
@@ -39,13 +40,21 @@ const tabs = {
 export default function App() {
   const classes = useStyles()
   const [activeTab, setActiveTab] = useState(0)
+  const [contentHeight, setContentHeight] = useState(null)
+  const [topBarHeight, setTopBarHeight] = useState(null)
+  const size = useWindowSize()
+
+  useLayoutEffect(() => {
+    setContentHeight(size.height - topBarHeight)
+  }, [size.height, topBarHeight])
 
   return (
     <div className={classes.app}>
       <ThemeProvider theme={theme}>
-        <Menu tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-        <Banner />
-        <Home tabs={tabs} setActiveTab={setActiveTab} />
+        <ContentHeightContext.Provider value={contentHeight}>
+          <TopBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} setTopBarHeight={setTopBarHeight} />
+          <Routes tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+        </ContentHeightContext.Provider>
       </ThemeProvider>
     </div>
   )

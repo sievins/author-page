@@ -5,8 +5,8 @@ import ButtonBase from '@material-ui/core/ButtonBase'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
-import divider from '../../../assets/images/divider.png'
-import { useStyles } from '../../../hooks'
+import divider from '../../../../assets/images/divider.png'
+import { useStyles } from '../../../../hooks'
 
 const useMuiStyles = makeStyles((theme) => ({
   grid: {

@@ -1,4 +1,4 @@
-import useOrientation from './useOrientation'
+import useOrientation from './use-orientation'
 import useScreenSize from './use-screen-size'
 
 export default function useStyles(useMuiStyles) {
