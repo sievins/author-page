@@ -1,7 +1,7 @@
 import React from 'react'
 import Menu from './menu'
 import MenuMobile from './menu-mobile'
-import { useScreenSize } from '../hooks'
+import { useScreenSize } from '../../hooks'
 
 export default function MenuWrapper(props) {
   const { isExtraSmallScreen } = useScreenSize()

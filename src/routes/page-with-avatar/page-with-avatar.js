@@ -1,21 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
-import { useStyles } from '../hooks'
+import { useStyles } from '../../hooks'
 import Avatar from './avatar'
-import Corners from './corners'
 
-const tabPropType = PropTypes.shape({
-  text: PropTypes.string.isRequired,
-  activeIndex: PropTypes.number.isRequired,
-}).isRequired
-
-Home.propTypes = {
-  tabs: PropTypes.shape({
-    christianCorner: tabPropType,
-    fantasyCorner: tabPropType,
-  }).isRequired,
-  setActiveTab: PropTypes.func.isRequired,
+PageWithAvatar.propTypes = {
+  children: PropTypes.element.isRequired,
 }
 
 const useMuiStyles = makeStyles((theme) => ({
@@ -37,14 +27,14 @@ const useMuiStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Home({ tabs, setActiveTab }) {
+export default function PageWithAvatar(props) {
   const classes = useStyles(useMuiStyles)
 
   return (
     <div className={classes.container}>
       <Avatar />
       <div className={classes.divider} />
-      <Corners tabs={tabs} setActiveTab={setActiveTab} />
+      {props.children}
     </div>
   )
 }
