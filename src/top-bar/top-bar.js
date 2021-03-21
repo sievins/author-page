@@ -17,7 +17,7 @@ export default function TopBar({ setTopBarHeight, ...props }) {
   return (
     <div ref={containerElement}>
       <Menu {...props} />
-      <Banner />
+      <Banner {...props} />
     </div>
   )
 }

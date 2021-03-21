@@ -63,8 +63,8 @@ export default function MenuMobile({ activeTab, setActiveTab }) {
       onClick={toggleDrawer(false)}
     >
       <List>
-        <Item primary="Christian corner" tabIndex={1} />
-        <Item primary="Fantasy corner" tabIndex={2} />
+        <Item primary="Christian Books" tabIndex={1} />
+        <Item primary="Fantasy Books" tabIndex={2} />
         <Item primary="About" tabIndex={3} />
         <Divider />
         <ListItem button onClick={()=> window.open("https://mailchi.mp/0e212a879f8f/alicegent", "_blank")}>
@@ -89,8 +89,8 @@ export default function MenuMobile({ activeTab, setActiveTab }) {
           </IconButton>
           <Typography variant="h6" classes={{ root: classes.font }}>
             {
-              activeTab === 1 ? 'Christian Corner' :
-              activeTab === 2 ? 'Fantasy Corner' :
+              activeTab === 1 ? 'Christian Books' :
+              activeTab === 2 ? 'Fantasy Books' :
               activeTab === 3 ? 'About' : 'Alice'
             }
           </Typography>

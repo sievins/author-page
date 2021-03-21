@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Home from './home'
 import AboutAlice from './about-alice'
+import ChristianBooks from './chirstian-books'
 
 const tabPropType = PropTypes.shape({
   text: PropTypes.string.isRequired,
@@ -21,6 +22,8 @@ export default function Routes({ tabs, activeTab, setActiveTab }) {
   return (
     tabs.home.activeIndex === activeTab
       ? <Home setActiveTab={setActiveTab} tabs={tabs} /> :
+    tabs.christianBooks.activeIndex === activeTab
+      ? <ChristianBooks /> :
     tabs.aboutAlice.activeIndex === activeTab
       ? <AboutAlice />
       : <Home setActiveTab={setActiveTab} tabs={tabs} />

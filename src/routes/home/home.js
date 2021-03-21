@@ -10,8 +10,8 @@ const tabPropType = PropTypes.shape({
 
 Home.propTypes = {
   tabs: PropTypes.shape({
-    christianCorner: tabPropType,
-    fantasyCorner: tabPropType,
+    christianBooks: tabPropType,
+    fantasyBooks: tabPropType,
   }).isRequired,
   setActiveTab: PropTypes.func.isRequired,
 }
