@@ -12,8 +12,8 @@ const tabPropType = PropTypes.shape({
 
 Corners.propTypes = {
   tabs: PropTypes.shape({
-    christianCorner: tabPropType,
-    fantasyCorner: tabPropType,
+    christianBooks: tabPropType,
+    fantasyBooks: tabPropType,
   }).isRequired,
   setActiveTab: PropTypes.func.isRequired,
 }
@@ -41,15 +41,15 @@ export default function Corners({ tabs, setActiveTab }) {
   return (
     <Grid container className={classes.container}>
       <Corner
-        title={tabs.christianCorner.text}
+        title={tabs.christianBooks.text}
         authorName="Alice Gent"
-        onClick={() => setActiveTab(tabs.christianCorner.activeIndex)}
+        onClick={() => setActiveTab(tabs.christianBooks.activeIndex)}
       />
       <div className={classes.divider} />
       <Corner
-        title={tabs.fantasyCorner.text}
+        title={tabs.fantasyBooks.text}
         authorName="Alice Ivinya"
-        onClick={() => setActiveTab(tabs.fantasyCorner.activeIndex)}
+        onClick={() => setActiveTab(tabs.fantasyBooks.activeIndex)}
       />
     </Grid>
   )

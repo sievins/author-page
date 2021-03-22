@@ -7,11 +7,13 @@ import Tab from '@material-ui/core/Tab'
 import Button from '@material-ui/core/Button'
 import { showNewsletterSubscription } from './subscriber'
 import { useStyles, useScreenSize } from '../../hooks'
+import { menuHeight } from '../styles'
 
 const useMuiStyles = makeStyles(theme => ({
   bar: {
     backgroundColor: 'white',
-    height: 48,
+    height: menuHeight,
+    opacity: 0.9,
   },
   home: {
     display: 'none',
@@ -40,8 +42,8 @@ const tabPropType = PropTypes.shape({
 Menu.propTypes = {
   tabs: PropTypes.shape({
     home: tabPropType,
-    christianCorner: tabPropType,
-    fantasyCorner: tabPropType,
+    christianBooks: tabPropType,
+    fantasyBooks: tabPropType,
     aboutAlice: tabPropType,
   }).isRequired,
   activeTab: PropTypes.number.isRequired,
@@ -59,12 +61,16 @@ export default function Menu({ tabs, activeTab, setActiveTab }) {
     setActiveTab(tab)
   }
 
+  const position = isExtraSmallScreen || isSmallScreen
+    ? 'static'
+    : 'fixed'
+
   return (
-    <AppBar position="static" className={classes.bar}>
+    <AppBar position={position} className={classes.bar}>
       <Tabs value={activeTab} onChange={handleChange} centered>
         <Tab label={tabs.home.text} className={classes.home} />
-        <Tab label={tabs.christianCorner.text} className={classes.tab} />
-        <Tab label={tabs.fantasyCorner.text} className={classes.tab} />
+        <Tab label={tabs.christianBooks.text} className={classes.tab} />
+        <Tab label={tabs.fantasyBooks.text} className={classes.tab} />
         <Tab label={tabs.aboutAlice.text} className={classes.tab} />
       </Tabs>
       { showNewsletterButton &&

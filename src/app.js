@@ -21,18 +21,22 @@ const useStyles = makeStyles({
 const tabs = {
   home: {
     text: 'Home',
+    title: null,
     activeIndex: 0,
   },
-  christianCorner: {
-    text: 'Christian Corner',
+  christianBooks: {
+    text: 'Christian Books',
+    title: 'Christian Fiction',
     activeIndex: 1,
   },
-  fantasyCorner: {
-    text: 'Fantasy Corner',
+  fantasyBooks: {
+    text: 'Fantasy Books',
+    title: 'Young Adult Fantasy',
     activeIndex: 2,
   },
   aboutAlice: {
     text: 'About Alice',
+    title: 'Alice Ivinya & Alice Gent',
     activeIndex: 3,
   },
 }
