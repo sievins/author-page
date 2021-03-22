@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
-import { useStyles } from '../../hooks'
+import { useOrientation, useStyles } from '../../hooks'
 import { menuHeight } from '../styles'
 import banner from '../../assets/images/banner.jpg'
 
-const calculateHeight = (isLandscape) => isLandscape ? '35vh' : '20vh'
+const calculateBannerHeight = (isLandscape) => isLandscape ? '35vh' : '20vh'
 
 const useMuiStyles = makeStyles({
   container: ({ isExtraSmallScreen, isSmallScreen }) => ({
@@ -17,15 +17,14 @@ const useMuiStyles = makeStyles({
     ),
     justifyContent: 'center',
   }),
-  header: ({ isLandscape }) => ({
+  heading: {
     position: 'absolute',
     fontFamily: 'belepotan-italic',
     fontSize: 'xx-large',
-    marginTop: `calc(${menuHeight}px / 2.5 + (${calculateHeight(isLandscape)} - ${menuHeight}px) / 2)`, // TODO improve this
-  }),
-  parallax: ({ isLandscape }) => ({
+  },
+  banner: ({ isLandscape }) => ({
     backgroundImage: `url("${banner}")`,
-    height: calculateHeight(isLandscape),
+    height: calculateBannerHeight(isLandscape),
     width: '100%',
 
     // Create the parallax scrolling effect
@@ -52,15 +51,34 @@ Banner.propTypes = {
 
 export default function Banner({ tabs, activeTab }) {
   const classes = useStyles(useMuiStyles)
+  const { isLandscape } = useOrientation()
+  const headingElement = useRef(null)
+  const [headingMarginTop, setHeadingMarginTop] = useState(null)
+
+  useLayoutEffect(() => {
+    const menuHeightPx = `${menuHeight}px`
+    const visibleBannerHeight = `(${calculateBannerHeight(isLandscape)} - ${menuHeight}px)`
+    const elementHeight = `${headingElement.current.clientHeight}px`
+
+    const marginTop = `calc(${menuHeightPx} + ${visibleBannerHeight} / 2 - ${elementHeight})`
+
+    setHeadingMarginTop(marginTop)
+  }, [headingElement, isLandscape, activeTab])
 
   const { title } = Object.values(tabs).find(tab => tab.activeIndex === activeTab)
 
   return (
     <div className={classes.container}>
-      <Typography variant="h1" component="h1" className={classes.header}>
+      <Typography
+        variant="h1"
+        component="h1"
+        className={classes.heading}
+        style={{ marginTop: headingMarginTop }}
+        ref={headingElement}
+      >
         {title}
       </Typography>
-      <header className={classes.parallax} />
+      <header className={classes.banner} />
     </div>
   )
 }
