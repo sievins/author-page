@@ -6,7 +6,7 @@ import { useStyles } from '../../hooks'
 import { menuHeight } from '../styles'
 import banner from '../../assets/images/banner.jpg'
 
-const calculateHeight = (isLandscape) => isLandscape ? '29vh' : '20vh'
+const calculateHeight = (isLandscape) => isLandscape ? '35vh' : '20vh'
 
 const useMuiStyles = makeStyles({
   container: ({ isExtraSmallScreen, isSmallScreen }) => ({
@@ -21,7 +21,7 @@ const useMuiStyles = makeStyles({
     position: 'absolute',
     fontFamily: 'belepotan-italic',
     fontSize: 'xx-large',
-    marginTop: `calc(${menuHeight}px / 2.5 + (${calculateHeight(isLandscape)} - ${menuHeight}px) / 2)`,
+    marginTop: `calc(${menuHeight}px / 2.5 + (${calculateHeight(isLandscape)} - ${menuHeight}px) / 2)`, // TODO improve this
   }),
   parallax: ({ isLandscape }) => ({
     backgroundImage: `url("${banner}")`,

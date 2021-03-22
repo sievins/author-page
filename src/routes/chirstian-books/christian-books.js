@@ -1,7 +1,12 @@
 import React from 'react'
+import Underlay from '../underlay'
 
 export default function ChristianBooks() {
   return (
-    <div style={{ marginBottom: 1000 }}>Christian book</div>
+    <Underlay>
+      <div style={{ marginBottom: 1000 }}>
+        Hello
+      </div>
+    </Underlay>
   )
 }

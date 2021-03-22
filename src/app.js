@@ -7,16 +7,16 @@ import TopBar from './top-bar'
 import Routes from './routes'
 import { useWindowSize } from './hooks'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   app: {
     backgroundColor: '#f2f2f2',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     fontSize: 'calc(10px + 2vmin)',
-    color: '#282c34',
+    color: theme.palette.background.light,
   }
-})
+}))
 
 const tabs = {
   home: {

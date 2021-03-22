@@ -10,5 +10,9 @@ export default createMuiTheme({
     secondary: {
       main: green[400],
     },
+    background: {
+      light: '#f2f2f2',
+      dark: '#dfdcdd',
+    },
   },
 })
