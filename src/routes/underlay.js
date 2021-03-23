@@ -3,16 +3,22 @@ import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import { useStyles } from '../hooks'
 
-const underlayHeight = '45vh'
+const calculateUnderlayHeight = ({ isExtraSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen }) => (
+  isLargeScreen ? '45vh' :
+  isMediumScreen ? '45vh' :
+  isSmallScreen ? '67vh' :
+  isExtraSmallScreen ? '58vh'
+  : '45vh'
+)
 
 const useMuiStyles = makeStyles((theme) => ({
-  underlay: {
-    height: underlayHeight,
+  underlay: (props) => ({
+    height: calculateUnderlayHeight(props),
     backgroundColor: theme.palette.background.dark,
-  },
-  children: {
-    marginTop: `-${underlayHeight}`,
-  },
+  }),
+  children: (props) => ({
+    marginTop: `-${calculateUnderlayHeight(props)}`,
+  }),
 }))
 
 Underlay.propTypes = {
