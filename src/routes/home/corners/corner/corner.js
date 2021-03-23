@@ -30,13 +30,12 @@ const useMuiStyles = makeStyles((theme) => ({
       padding: theme.spacing(2),
       width: theme.spacing(width),
       textAlign: 'center',
-      color: theme.palette.text.primary,
       margin: 'auto',
       cursor: 'pointer',
     }
   },
   h1: {
-    fontFamily: 'belepotan-italic',
+    fontFamily: 'frieght-disp-bold',
     fontSize: 'x-large',
   },
   h2: {

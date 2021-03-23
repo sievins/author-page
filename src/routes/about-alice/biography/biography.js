@@ -14,6 +14,7 @@ const useMuiStyles = makeStyles((theme) => ({
 
     return {
       width: theme.spacing(width),
+      alignSelf: 'center',
     }
   },
 }))

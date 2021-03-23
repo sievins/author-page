@@ -8,7 +8,7 @@ import banner from '../../assets/images/banner.jpg'
 
 const calculateBannerHeight = (isLandscape) => isLandscape ? '35vh' : '20vh'
 
-const useMuiStyles = makeStyles({
+const useMuiStyles = makeStyles((theme) => ({
   container: ({ isExtraSmallScreen, isSmallScreen }) => ({
     display: (
       isExtraSmallScreen || isSmallScreen
@@ -19,8 +19,9 @@ const useMuiStyles = makeStyles({
   }),
   heading: {
     position: 'absolute',
-    fontFamily: 'belepotan-italic',
+    fontFamily: 'frieght-disp-bold',
     fontSize: 'xx-large',
+    color: theme.palette.text.secondary,
   },
   banner: ({ isLandscape }) => ({
     backgroundImage: `url("${banner}")`,
@@ -32,10 +33,10 @@ const useMuiStyles = makeStyles({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
   }),
-})
+}))
 
 const tabPropType = PropTypes.shape({
-  title: PropTypes.string,
+  title: PropTypes.node,
   activeIndex: PropTypes.number.isRequired,
 }).isRequired
 
