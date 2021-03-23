@@ -20,16 +20,20 @@ Fade.propTypes = {
   in: PropTypes.bool.isRequired,
   opacity: PropTypes.number,
   children: PropTypes.element.isRequired,
+  className: PropTypes.string,
 }
 
-export default function Fade({ in: inProp, opacity = 0.5, children }) {
+export default function Fade({ in: inProp, opacity = 0.5, children, className }) {
   return (
     <Transition in={inProp} timeout={duration}>
       {state => (
-        <div style={{
-          ...defaultStyle,
-          ...transitionStyles(opacity)[state]
-        }}>
+        <div
+          style={{
+            ...defaultStyle,
+            ...transitionStyles(opacity)[state]
+          }}
+          className={className}
+        >
           {children}
         </div>
       )}

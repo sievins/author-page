@@ -6,8 +6,8 @@ import { useStyles } from '../hooks'
 const calculateUnderlayHeight = ({ isExtraSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen }) => (
   isLargeScreen ? '45vh' :
   isMediumScreen ? '45vh' :
-  isSmallScreen ? '67vh' :
-  isExtraSmallScreen ? '58vh'
+  isSmallScreen ? '38vh' :
+  isExtraSmallScreen ? '31vh'
   : '45vh'
 )
 
@@ -22,7 +22,10 @@ const useMuiStyles = makeStyles((theme) => ({
 }))
 
 Underlay.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ])
 }
 
 export default function Underlay({ children }) {

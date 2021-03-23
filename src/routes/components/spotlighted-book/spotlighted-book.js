@@ -20,8 +20,12 @@ const useMuiStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(5),
     cursor: 'pointer',
   }),
+  textContainer: {
+    marginBottom: theme.spacing(5),
+  },
   text: {
     cursor: 'pointer',
+    color: theme.palette.text.secondary,
   },
 }))
 
@@ -45,7 +49,7 @@ export default function SpotlightedBook({ coverSrc, title }) {
           onMouseLeave={() => setFocus(false)}
         />
       </Fade>
-      <Fade in={focus}>
+      <Fade in={focus} className={classes.textContainer}>
         <span
           className={classes.text}
           onMouseEnter={() => setFocus(true)}
