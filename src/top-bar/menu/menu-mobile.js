@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     width: 250,
   },
   font: {
-    fontFamily: 'belepotan-italic',
+    fontFamily: 'frieght-disp-bold',
   },
   selected: {
     backgroundColor: theme.palette.primary.main,

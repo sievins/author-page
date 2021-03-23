@@ -23,11 +23,11 @@ const useMuiStyles = makeStyles(theme => ({
     return {
       width: theme.spacing(width),
       maxWidth: theme.spacing(width),
-      fontFamily: 'belepotan-italic',
+      fontFamily: 'frieght-disp-bold',
     }
   },
   button: {
-    fontFamily: 'belepotan-italic',
+    fontFamily: 'frieght-disp-bold',
     top: -42.2,
     marginLeft: 'auto',
     marginRight: 5.8,

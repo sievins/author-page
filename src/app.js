@@ -1,22 +1,26 @@
-import React, { useState, useLayoutEffect } from 'react'
-import { ThemeProvider } from '@material-ui/styles'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
-import ContentHeightContext from './content-height-context'
-import theme from './theme'
 import TopBar from './top-bar'
 import Routes from './routes'
-import { useWindowSize } from './hooks'
 
 const useStyles = makeStyles((theme) => ({
   app: {
-    backgroundColor: '#f2f2f2',
+    backgroundColor: theme.palette.background.light,
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    fontSize: 'calc(10px + 2vmin)',
-    color: theme.palette.background.light,
+    fontSize: 'calc(10px + 1.2vmin)',
+    lineHeight: '26px',
+    textAlign: 'center',
+    textRendering: 'optimizeLegibility',
+    color: theme.palette.text.primary,
   }
 }))
+
+const preserveWhiteSpace = (string) => (
+  <span style={{ whiteSpace: 'pre' }}>{string}</span>
+)
 
 const tabs = {
   home: {
@@ -26,40 +30,33 @@ const tabs = {
   },
   christianBooks: {
     text: 'Christian Books',
-    title: 'Christian Fiction',
+    title: preserveWhiteSpace('Christian  Fiction'),
     activeIndex: 1,
   },
   fantasyBooks: {
     text: 'Fantasy Books',
-    title: 'Young Adult Fantasy',
+    title: preserveWhiteSpace('Young  Adult  Fantasy'),
     activeIndex: 2,
   },
   aboutAlice: {
     text: 'About Alice',
-    title: 'Alice Ivinya & Alice Gent',
+    title: preserveWhiteSpace('Alice  Ivinya    - & -    Alice  Gent'),
     activeIndex: 3,
   },
 }
 
-export default function App() {
+App.propTypes = {
+  setTopBarHeight: PropTypes.func.isRequired,
+}
+
+export default function App({ setTopBarHeight }) {
   const classes = useStyles()
   const [activeTab, setActiveTab] = useState(0)
-  const [contentHeight, setContentHeight] = useState(null)
-  const [topBarHeight, setTopBarHeight] = useState(null)
-  const size = useWindowSize()
-
-  useLayoutEffect(() => {
-    setContentHeight(size.height - topBarHeight)
-  }, [size.height, topBarHeight])
 
   return (
     <div className={classes.app}>
-      <ThemeProvider theme={theme}>
-        <ContentHeightContext.Provider value={contentHeight}>
-          <TopBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} setTopBarHeight={setTopBarHeight} />
-          <Routes tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-        </ContentHeightContext.Provider>
-      </ThemeProvider>
+      <TopBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} setTopBarHeight={setTopBarHeight} />
+      <Routes tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
   )
 }
