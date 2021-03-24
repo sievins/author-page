@@ -1,6 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 import blue from '@material-ui/core/colors/blue'
-import deepOrange from '@material-ui/core/colors/deepOrange'
 
 export default createMuiTheme({
   palette: {
@@ -8,7 +7,7 @@ export default createMuiTheme({
       main: blue[50],
     },
     secondary: {
-      main: deepOrange[900],
+      main: '#a75d6a',
     },
     background: {
       light: '#f2f2f2',
