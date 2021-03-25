@@ -18,18 +18,20 @@ Series.propTypes = {
     title: PropTypes.string.isRequired,
     coverSrc: PropTypes.string.isRequired,
   })),
+  showDivider: PropTypes.bool,
 }
 
 export default function Series({
   spotlightedBook: { coverSrc, title: spotlightBookTitle },
   seriesOverview: { title: seriesOverviewTitle, paragraphs },
   books = [],
+  showDivider,
 }) {
   return (
     <Underlay>
       <SpotlightedBook coverSrc={coverSrc} title={spotlightBookTitle} />
       <SeriesOverview title={seriesOverviewTitle} paragraphs={paragraphs} />
-      <Books books={books} />
+      <Books books={books} showDivider={showDivider} />
     </Underlay>
   )
 }

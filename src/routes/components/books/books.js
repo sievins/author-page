@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
+import Divider from '@material-ui/core/Divider'
 import { makeStyles } from '@material-ui/core'
 import { useStyles } from '../../../hooks'
 import SelectableBook from '../selectable-book'
@@ -15,6 +16,11 @@ const useMuiStyles = makeStyles((theme) => ({
   text: {
     fontSize: 'calc(6px + 1vmin)',
   },
+  divider: {
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(8),
+    height: '2px',
+  },
 }))
 
 Books.propTypes = {
@@ -22,9 +28,10 @@ Books.propTypes = {
     title: PropTypes.string.isRequired,
     coverSrc: PropTypes.string.isRequired,
   })),
+  showDivider: PropTypes.bool,
 }
 
-export default function Books({ books }) {
+export default function Books({ books, showDivider = false }) {
   const classes = useStyles(useMuiStyles)
 
   if (books.length === 0) return null
@@ -52,6 +59,9 @@ export default function Books({ books }) {
             ))
           }
         </Grid>
+        {
+          showDivider && <Divider className={classes.divider} />
+        }
       </Grid>
     </Grid>
   )
