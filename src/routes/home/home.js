@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PageWithAvatar from '../page-with-avatar'
+import { PageWithAvatar } from '../components'
 import Corners from './corners'
 
 const tabPropType = PropTypes.shape({

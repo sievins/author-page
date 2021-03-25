@@ -1,9 +1,9 @@
 import React from 'react'
 import MuiAvatar from '@material-ui/core/Avatar'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import src from '../../../assets/images/avatar.png'
-import { useStyles, useScreenSize, useOrientation } from '../../../hooks'
-import ContentHeightContext from '../../../content-height-context'
+import src from '../../../../assets/images/avatar.png'
+import { useStyles, useScreenSize, useOrientation } from '../../../../hooks'
+import ContentHeightContext from '../../../../content-height-context'
 
 const getMarginTop = ({ size, contentHeight, isPortrait }) => (
   isPortrait

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
-import { useStyles } from '../../hooks'
+import { useStyles } from '../../../hooks'
 import Avatar from './avatar'
 
 PageWithAvatar.propTypes = {
