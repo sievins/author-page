@@ -21,11 +21,13 @@ Books.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     coverSrc: PropTypes.string.isRequired,
-  })).isRequired,
+  })),
 }
 
 export default function Books({ books }) {
   const classes = useStyles(useMuiStyles)
+
+  if (books.length === 0) return null
 
   return (
     <Grid container justify="center" className={classes.container}>

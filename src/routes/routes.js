@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Home from './home'
-import AboutAlice from './about-alice'
 import ChristianBooks from './chirstian-books'
+import FantasyBooks from './fantasy-books'
+import AboutAlice from './about-alice'
 
 const tabPropType = PropTypes.shape({
   text: PropTypes.string.isRequired,
@@ -24,6 +25,8 @@ export default function Routes({ tabs, activeTab, setActiveTab }) {
       ? <Home setActiveTab={setActiveTab} tabs={tabs} /> :
     tabs.christianBooks.activeIndex === activeTab
       ? <ChristianBooks /> :
+    tabs.fantasyBooks.activeIndex === activeTab
+      ? <FantasyBooks /> :
     tabs.aboutAlice.activeIndex === activeTab
       ? <AboutAlice />
       : <Home setActiveTab={setActiveTab} tabs={tabs} />

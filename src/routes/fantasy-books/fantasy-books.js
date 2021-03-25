@@ -2,7 +2,7 @@ import React from 'react'
 import { Series } from '../components'
 import coverSrc from '../../assets/images/covers/feathers-of-snow.jpg'
 
-export default function ChristianBooks() {
+export default function FantasyBooks() {
   return (
     <Series
       spotlightedBook={{
