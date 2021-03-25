@@ -13,6 +13,7 @@ const useMuiStyles = makeStyles((theme) => ({
   },
   text: {
     fontSize: 'calc(8px + 1.2vmin)',
+    marginBottom: theme.spacing(5),
   },
 }))
 
