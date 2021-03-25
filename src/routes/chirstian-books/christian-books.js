@@ -39,6 +39,7 @@ export default function ChristianBooks() {
           coverSrc,
         },
       ]}
+      showDivider={true}
     />
   )
 }
