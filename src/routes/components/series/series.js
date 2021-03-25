@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Underlay from '../../underlay'
 import SpotlightedBook from '../spotlighted-book'
 import SeriesOverview from '../series-overview'
 import Books from '../books'
@@ -9,6 +8,7 @@ Series.propTypes = {
   spotlightedBook: PropTypes.shape({
     coverSrc: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    showTitle: PropTypes.bool.isRequired,
   }).isRequired,
   seriesOverview: PropTypes.shape({
     title: PropTypes.string.isRequired,
@@ -22,16 +22,16 @@ Series.propTypes = {
 }
 
 export default function Series({
-  spotlightedBook: { coverSrc, title: spotlightBookTitle },
+  spotlightedBook: { coverSrc, title: spotlightBookTitle, showTitle },
   seriesOverview: { title: seriesOverviewTitle, paragraphs },
   books = [],
   showDivider,
 }) {
   return (
-    <Underlay>
-      <SpotlightedBook coverSrc={coverSrc} title={spotlightBookTitle} />
+    <>
+      <SpotlightedBook coverSrc={coverSrc} title={spotlightBookTitle} showTitle={showTitle} />
       <SeriesOverview title={seriesOverviewTitle} paragraphs={paragraphs} />
       <Books books={books} showDivider={showDivider} />
-    </Underlay>
+    </>
   )
 }

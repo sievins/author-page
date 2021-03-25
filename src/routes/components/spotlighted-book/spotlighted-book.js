@@ -6,7 +6,6 @@ import SelectableBook from '../selectable-book'
 
 const useMuiStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(5),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -25,9 +24,10 @@ const useMuiStyles = makeStyles((theme) => ({
 SpotlightedBook.propTypes = {
   coverSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  showTitle: PropTypes.bool.isRequired,
 }
 
-export default function SpotlightedBook({ coverSrc, title }) {
+export default function SpotlightedBook({ coverSrc, title, showTitle }) {
   const classes = useStyles(useMuiStyles)
 
   return (
@@ -39,6 +39,7 @@ export default function SpotlightedBook({ coverSrc, title }) {
         image: classes.image,
         textContainer: classes.textContainer,
       }}
+      showTitle={showTitle}
     />
   )
 }

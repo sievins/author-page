@@ -24,10 +24,11 @@ SelectableBook.propTypes = {
     image: PropTypes.string,
     textContainer: PropTypes.string,
     text: PropTypes.string,
-  })
+  }),
+  showTitle: PropTypes.bool.isRequired,
 }
 
-export default function SelectableBook({ coverSrc, title, classNames = {} }) {
+export default function SelectableBook({ coverSrc, title, classNames = {}, showTitle }) {
   const classes = useStyles(useMuiStyles)
   const [focus, setFocus] = useState(false)
 
@@ -42,15 +43,17 @@ export default function SelectableBook({ coverSrc, title, classNames = {} }) {
           onMouseLeave={() => setFocus(false)}
         />
       </Fade>
-      <Fade in={focus} className={classNames.textContainer}>
-        <span
-          className={`${classes.text} ${classNames.text}`}
-          onMouseEnter={() => setFocus(true)}
-          onMouseLeave={() => setFocus(false)}
-        >
-          {title}
-        </span>
-      </Fade>
+      { showTitle &&
+        <Fade in={focus} className={classNames.textContainer}>
+          <span
+            className={`${classes.text} ${classNames.text}`}
+            onMouseEnter={() => setFocus(true)}
+            onMouseLeave={() => setFocus(false)}
+          >
+            {title}
+          </span>
+        </Fade>
+      }
     </div>
   )
 }
