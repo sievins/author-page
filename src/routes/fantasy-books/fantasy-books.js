@@ -1,44 +1,219 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { useStyles } from '../../hooks'
+import Underlay from '../underlay'
 import { Series } from '../components'
-import coverSrc from '../../assets/images/covers/feathers-of-snow.jpg'
+import feathersOfSnow from '../../assets/images/covers/feathers-of-snow.jpg'
+import feathersOfBlood from '../../assets/images/covers/feathers-of-blood.jpg'
+import theFlawedPrincess from '../../assets/images/covers/the-flawed-princess.jpg'
+import queenAvan from '../../assets/images/covers/queen-avan.jpg'
+import avansGift from '../../assets/images/covers/avans-gift.jpeg'
+import avansCurse from '../../assets/images/covers/avans-curse.jpeg'
+import avansHeart from '../../assets/images/covers/avans-heart.jpg'
+import silentMelody from '../../assets/images/covers/silent-melody.jpg'
+import enchantedMelody from '../../assets/images/covers/enchanted-melody.jpg'
+import slipperInTheSnow from '../../assets/images/covers/slipper-in-the-snow.jpg'
+import nettlesInTheSnow from '../../assets/images/covers/nettles-in-the-snow.jpg'
+import secretsInTheSnow from '../../assets/images/covers/secrets-in-the-snow.jpg'
+import princessInTheSnow from '../../assets/images/covers/princess-in-the-snow.jpg'
+import theFoxAndTheTrain from '../../assets/images/covers/the-fox-and-the-train.jpg'
+import enchantedWaters from '../../assets/images/covers/enchanted-waters.jpg'
+import theWidowAndTheBeast from '../../assets/images/covers/the-widow-and-the-beast.jpg'
+
+const useMuiStyles = makeStyles((theme) => ({
+  initialPadding: {
+    height: theme.spacing(5),
+  },
+}))
 
 export default function FantasyBooks() {
+  const classes = useStyles(useMuiStyles)
+
   return (
-    <Series
-      spotlightedBook={{
-        coverSrc,
-        title: 'feathers of snow',
-      }}
-      seriesOverview={{
-        title: 'Feathers of snow series title',
-        paragraphs: [
-          'The first Harry Potter book, Harry Potter and the Philosopher’s Stone, was published in 1997 to immediate popular and critical acclaim. Six further best-selling books and eight blockbuster films followed. The books have been translated into over 80 languages, won multiple awards, and sold more than 500 million copies worldwide, becoming the best-selling book series in history..',
-          'In 2016, a new era of the Wizarding World was unveiled with the launch of Fantastic Beasts and Where to Find Them, an original screenplay by J.K. Rowling and the first in a major film series for Warner Bros.',
-          'Pottermore Publishing is the global digital publisher of the Harry Potter series and Fantastic Beasts film tie-ins, as well as other digital audiobooks and eBooks from the Wizarding World.',
-        ]
-      }}
-      books={[
-        {
-          title: 'Feathers',
-          coverSrc,
-        },
-        {
-          title: 'Feathers of snow 2',
-          coverSrc,
-        },
-        {
-          title: 'Feathers of snow 3',
-          coverSrc,
-        },
-        {
-          title: 'Feathers of snow 4',
-          coverSrc,
-        },
-        {
-          title: 'Feathers of snow 5',
-          coverSrc,
-        },
-      ]}
-    />
+    <Underlay>
+      <div className={classes.initialPadding} />
+      <Series
+        spotlightedBook={{
+          coverSrc: feathersOfSnow,
+          title: 'feathers of snow',
+          showTitle: true,
+        }}
+        seriesOverview={{
+          title: 'Kingdom of Birds and Beasts',
+          paragraphs: [
+            'In Brianna’s new world of ice and snow, the coldest things by far are the eyes of her betrothed...',
+            'Brianna bears a deadly secret: she’s not the princess she is pretending to be. If the prince finds out, her life will be forfeit and her country plunged into war.',
+            'But there is more to the icy prince than meets the eye, and Brianna slowly unravels the secrets of his dark past while surviving in a strange culture.',
+            'However her goodness and wit will only get her so far. Terrifying beasts stalk the border and a murderer is at work in the town. They know the truth of Brianna’s identity and will stop at nothing to destroy all she has fought for.',
+          ],
+        }}
+        books={[
+          {
+            title: 'feathers of snow',
+            coverSrc: feathersOfSnow,
+          },
+          {
+            title: 'feathers of blood',
+            coverSrc: feathersOfBlood,
+          },
+        ]}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: theFlawedPrincess,
+          title: 'the flawed princess',
+          showTitle: false,
+        }}
+        seriesOverview={{
+          title: 'The Flawed Princess',
+          paragraphs: [
+            'Is forgiveness too high a cost to save a kingdom?',
+            'Violet is hidden away by her father, a provincial lord, for having a deformed foot. She is tired of being ignored and longs to help her people, who have been abused and suppressed by the court for generations. Their ancient magic is almost forgotten.',
+            'When she is caught up in a deadly rebellion, Violet is taken hostage by the king and dragged to the capital. A prisoner deprived of friends and family, she is thrown into a dangerous world of politics and strange magic, where men and beasts are bonded together. Violet realises she must quickly learn the rules of the castle in order to be a voice for her forgotten province.',
+            'But the bonds that tie people are fragile, and true evil lurks in the shadows of the castle. As war and assassination threaten to break the kingdom apart, Violet realises that to save it, she must learn to forgive her captor.',
+            'And maybe even allow herself to be loved.',
+          ],
+        }}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: queenAvan,
+          title: 'queen avan',
+          showTitle: false,
+        }}
+        seriesOverview={{
+          title: 'Queen Avan',
+          paragraphs: [
+            'Avan’s land is dying.',
+            'A washerwoman whose future is bleak, Avan faces starvation. When the capital takes those in her village with tribal magic, she leaves with them, hoping for a better life. Or at least a constant supply of food.',
+            'Saving her country, gaining the heart of a prince, and then getting captured by savages wasn’t exactly what she’d had in mind.',
+            'But the real threats come from unexpected places and soon everyone she loves is at risk. She must untangle decades of corruption and rid the country of its most powerful leaders or watch her village starve.',
+          ],
+        }}
+        books={[
+          {
+            title: 'queen avan',
+            coverSrc: queenAvan,
+          },
+          {
+            title: 'avan’s gift',
+            coverSrc: avansGift,
+          },
+          {
+            title: 'avan’s curse',
+            coverSrc: avansCurse,
+          },
+          {
+            title: 'avan’s heart',
+            coverSrc: avansHeart,
+          },
+        ]}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: silentMelody,
+          title: 'silent melody: a pied piper retelling',
+          showTitle: true,
+        }}
+        seriesOverview={{
+          title: 'Songs of the Piper',
+          paragraphs: [
+            'When the Pied Piper came, only three children remained. One was deaf and one was blind. Being deaf meant life was hard for Adelaide in thirteenth century Germany. However, it also saved her from the Pied Piper’s music. When the children were stolen, she was left behind. Now she and her blind friend risk everything to free the children trapped in an eternal dance. But to rescue them she must face the Heartless Queen, who will do anything to keep them, and survive her twisted games. Adelaide finds she has no choice but to trust the man she should hate and hope he is not playing games of his own.If she fails, the children will be lost forever. The ebook version of Silent Melody is exclusive to the Enchanted Kingdoms box set until June to raise money for the charity Puzzle Peace United.',
+          ],
+        }}
+        books={[
+          {
+            title: 'silent melody',
+            coverSrc: silentMelody,
+          },
+          {
+            title: 'enchanted melody',
+            coverSrc: enchantedMelody,
+          },
+        ]}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: slipperInTheSnow,
+          title: 'Slipper in the Snow',
+          showTitle: true,
+        }}
+        seriesOverview={{
+          title: 'A Christmas Fairytale Short Story',
+          paragraphs: [
+            'Burge has always been famous for its spectacular Christmas Eve ball, and this year everyone knows it will be exceptional. The King lies on his deathbed, and Prince Simeon is looking for a wife. Princesses and ladies alike are flocking from around the world seeking his hand, but the only person he has eyes for is the mysterious stranger who appears from nowhere with a terrible secret.',
+          ],
+        }}
+        books={[
+          {
+            title: 'slipper in the snow',
+            coverSrc: slipperInTheSnow,
+          },
+          {
+            title: 'nettles in the snow',
+            coverSrc: nettlesInTheSnow,
+          },
+          {
+            title: 'secrets in the snow',
+            coverSrc: secretsInTheSnow,
+          },
+          {
+            title: 'princess in the snow',
+            coverSrc: princessInTheSnow,
+          },
+        ]}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: theFoxAndTheTrain,
+          title: 'the fox and the train',
+          showTitle: false,
+        }}
+        seriesOverview={{
+          title: 'The Fox and the Train',
+          paragraphs: [
+            '“Sometimes the most important battles are the ones that look like they cannot be won, but we fight anyway. Fight now, little one, or your fear will bring death.”',
+            'Isolated in a village surrounded by deep snow, thirteen year old Anna loses herself in the fairytales of the forbidding forest behind her house. Benny, an autistic inventor, becomes her only friend as she watches her family leave one by one.',
+            'When disaster strikes in the coal mine, men from the village are trapped underground, including Anna’s brother. The only train to the mine is destroyed and the adults of the village quickly lose hope for their loved ones.',
+            'But Anna and Benny refuse to give up and become the miners’ only chance of salvation, travelling through the dark forest alone. Between those frozen trees, things aren’t as they seem and soon Anna finds herself in a beautiful but dangerous fairytale of her own.',
+          ],
+        }}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: enchantedWaters,
+          title: 'enchanted waters',
+          showTitle: true,
+        }}
+        seriesOverview={{
+          title: 'A Magical Collection of Short Stories',
+          paragraphs: [
+            'What really lies beneath the waves?',
+            'Dive into our magical collection of short stories written by award-winning and up-and-coming authors and follow the ocean’s call.',
+            'Meet murderous kelpies, hear the mermaid’s song, find a kidnapped prince, and explore the beautiful underwater kingdoms. Befriend selkie royalty, break fearsome curses, and swoon as you fall in love.',
+          ],
+        }}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: theWidowAndTheBeast,
+          title: 'the widow and the beast',
+          showTitle: true,
+        }}
+        seriesOverview={{
+          title: 'Kingdoms of the Faery Path',
+          paragraphs: [
+            'Coming soon.'
+          ],
+        }}
+      />
+    </Underlay>
   )
 }

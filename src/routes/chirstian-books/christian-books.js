@@ -1,45 +1,57 @@
 import React from 'react'
+import { useStyles } from '../../hooks'
+import { makeStyles } from '@material-ui/core/styles'
+import Underlay from '../underlay'
 import { Series } from '../components'
-import coverSrc from '../../assets/images/covers/feathers-of-snow.jpg'
+import sarahsFootsteps from '../../assets/images/covers/sarahs-footsteps.jpeg'
+import leaving from '../../assets/images/covers/leaving.jpg'
+
+const useMuiStyles = makeStyles((theme) => ({
+  initialPadding: {
+    height: theme.spacing(5),
+  },
+}))
 
 export default function ChristianBooks() {
+  const classes = useStyles(useMuiStyles)
+
   return (
-    <Series
-      spotlightedBook={{
-        coverSrc,
-        title: 'feathers of snow',
-      }}
-      seriesOverview={{
-        title: 'Feathers of snow series title',
-        paragraphs: [
-          'The first Harry Potter book, Harry Potter and the Philosopher’s Stone, was published in 1997 to immediate popular and critical acclaim. Six further best-selling books and eight blockbuster films followed. The books have been translated into over 80 languages, won multiple awards, and sold more than 500 million copies worldwide, becoming the best-selling book series in history..',
-          'In 2016, a new era of the Wizarding World was unveiled with the launch of Fantastic Beasts and Where to Find Them, an original screenplay by J.K. Rowling and the first in a major film series for Warner Bros.',
-          'Pottermore Publishing is the global digital publisher of the Harry Potter series and Fantastic Beasts film tie-ins, as well as other digital audiobooks and eBooks from the Wizarding World.',
-        ]
-      }}
-      books={[
-        {
-          title: 'Feathers',
-          coverSrc,
-        },
-        {
-          title: 'Feathers of snow 2',
-          coverSrc,
-        },
-        {
-          title: 'Feathers of snow 3',
-          coverSrc,
-        },
-        {
-          title: 'Feathers of snow 4',
-          coverSrc,
-        },
-        {
-          title: 'Feathers of snow 5',
-          coverSrc,
-        },
-      ]}
-      showDivider={true}
-    />
+    <Underlay>
+      <div className={classes.initialPadding} />
+      <Series
+        spotlightedBook={{
+          coverSrc: sarahsFootsteps,
+          title: 'Sarah’s Footsteps',
+          showTitle: false,
+        }}
+        seriesOverview={{
+          title: 'Sarah’s Footsteps',
+          paragraphs: [
+            'Sometimes following the paths of our friends take us to unexpected places...',
+            'University. A stepping stone to adulthood. A place to find independence. A time to have fun and make great friends. An arena to learn skills and explore ideas. And, in Izzy’s case, a year where her life is turned upside down.',
+            'Surrounded by a world that suddenly doesn’t make sense, Izzy finds herself asking difficult questions of identity, morality and the role of faith.',
+            'In her struggle to find fulfilment in love, she finally stumbles across true redemption in a long rejected Saviour.',
+          ],
+        }}
+        showDivider={true}
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: leaving,
+          title: 'Leaving',
+          showTitle: false,
+        }}
+        seriesOverview={{
+          title: 'Leaving',
+          paragraphs: [
+            'If university days are the best days of your life, what comes after?',
+            'Evie loved Bristol Uni, but now it’s time for her to stand on her own. She had always assumed everything would fall into place, expecting her degree, strong faith and friendships to be all she needed.',
+            'What she wasn’t expecting was doubt, loneliness and depression.',
+            'Life is tough, her job boring, and her only friend seems to be a cactus named Kevin. Not even her faith brings the comfort and assurance it once did.',
+            'As God feels further and further away, Evie struggles to find the path that will bring her happiness, without losing her faith and everything she stands for in the process.',
+          ],
+        }}
+      />
+    </Underlay>
   )
 }
