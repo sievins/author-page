@@ -2,6 +2,7 @@ import React from 'react'
 import Underlay from '../underlay'
 import SpotlightedBook from '../components/spotlighted-book'
 import SeriesOverview from '../components/series-overview'
+import Books from '../components/books'
 import cover from '../../assets/images/covers/feathers-of-snow.jpg'
 
 export default function ChristianBooks() {
@@ -16,7 +17,30 @@ export default function ChristianBooks() {
           'Pottermore Publishing is the global digital publisher of the Harry Potter series and Fantastic Beasts film tie-ins, as well as other digital audiobooks and eBooks from the Wizarding World.',
         ]}
       />
-      <div style={{ marginBottom: 1000 }} />
+      <Books
+        books={[
+          {
+            title: 'Feathers',
+            coverSrc: cover,
+          },
+          {
+            title: 'Feathers of snow 2',
+            coverSrc: cover,
+          },
+          {
+            title: 'Feathers of snow 3',
+            coverSrc: cover,
+          },
+          {
+            title: 'Feathers of snow 4',
+            coverSrc: cover,
+          },
+          {
+            title: 'Feathers of snow 5',
+            coverSrc: cover,
+          },
+        ]}
+      />
     </Underlay>
   )
 }
