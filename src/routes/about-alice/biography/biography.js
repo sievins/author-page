@@ -39,7 +39,7 @@ export default function Biography() {
         She also writes Christian Fiction under the pen name Alice Gent and writes relevant Christ-centred articles for Heirs Magazine.
       </p>
       <p>
-        Alice hopes to chance the world for the better, one word at a time.
+        Alice hopes to change the world for the better, one word at a time.
       </p>
       <p>
         Follow Alice on Facebook for all her books: <Link href="https://www.facebook.com/sarahsfootsteps/" target="_blank" rel="noreferrer">www.facebook.com/sarahsfootsteps</Link>
