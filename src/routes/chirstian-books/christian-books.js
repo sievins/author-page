@@ -23,6 +23,7 @@ export default function ChristianBooks() {
           coverSrc: sarahsFootsteps,
           title: 'Sarah’s Footsteps',
           showTitle: false,
+          universalBookLink: 'https://storyoriginapp.com/universalbooklinks/d168ec02-2fa2-11ea-b06d-ffddceea3d04',
         }}
         seriesOverview={{
           title: 'Sarah’s Footsteps',
@@ -40,6 +41,7 @@ export default function ChristianBooks() {
           coverSrc: leaving,
           title: 'Leaving',
           showTitle: false,
+          universalBookLink: 'https://storyoriginapp.com/universalbooklinks/273c8b14-c35c-11ea-92ee-b77d121f04dd',
         }}
         seriesOverview={{
           title: 'Leaving',

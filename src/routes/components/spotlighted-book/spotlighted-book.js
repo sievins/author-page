@@ -24,10 +24,11 @@ const useMuiStyles = makeStyles((theme) => ({
 SpotlightedBook.propTypes = {
   coverSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  universalBookLink: PropTypes.string,
   showTitle: PropTypes.bool.isRequired,
 }
 
-export default function SpotlightedBook({ coverSrc, title, showTitle }) {
+export default function SpotlightedBook({ coverSrc, title, universalBookLink, showTitle }) {
   const classes = useStyles(useMuiStyles)
 
   return (
@@ -39,6 +40,7 @@ export default function SpotlightedBook({ coverSrc, title, showTitle }) {
         image: classes.image,
         textContainer: classes.textContainer,
       }}
+      universalBookLink={universalBookLink}
       showTitle={showTitle}
     />
   )
