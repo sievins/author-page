@@ -37,6 +37,7 @@ export default function FantasyBooks() {
           coverSrc: feathersOfSnow,
           title: 'feathers of snow',
           showTitle: true,
+          universalBookLink: 'https://storyoriginapp.com/universalbooklinks/40987692-2912-11eb-8eba-9744d8f5a192',
         }}
         seriesOverview={{
           title: 'Kingdom of Birds and Beasts',
@@ -51,10 +52,12 @@ export default function FantasyBooks() {
           {
             title: 'feathers of snow',
             coverSrc: feathersOfSnow,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/40987692-2912-11eb-8eba-9744d8f5a192',
           },
           {
             title: 'feathers of blood',
             coverSrc: feathersOfBlood,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/f9375808-8e2a-11eb-81ee-d7f4d46dc19f',
           },
         ]}
         showDivider
@@ -64,6 +67,7 @@ export default function FantasyBooks() {
           coverSrc: theFlawedPrincess,
           title: 'the flawed princess',
           showTitle: false,
+          universalBookLink: 'https://storyoriginapp.com/universalbooklinks/4ece9e5a-b81e-11e9-9ba7-3f8319817f47',
         }}
         seriesOverview={{
           title: 'The Flawed Princess',
@@ -82,6 +86,7 @@ export default function FantasyBooks() {
           coverSrc: queenAvan,
           title: 'queen avan',
           showTitle: false,
+          universalBookLink: 'https://storyoriginapp.com/universalbooklinks/9ee16a02-03e6-11eb-a984-7f87e4d8d0f8',
         }}
         seriesOverview={{
           title: 'Queen Avan',
@@ -96,18 +101,22 @@ export default function FantasyBooks() {
           {
             title: 'queen avan',
             coverSrc: queenAvan,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/9ee16a02-03e6-11eb-a984-7f87e4d8d0f8',
           },
           {
             title: 'avan’s gift',
             coverSrc: avansGift,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/e883b5d8-aa55-11ea-8807-5f6c379480ec',
           },
           {
             title: 'avan’s curse',
             coverSrc: avansCurse,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/c25a51ce-ab17-11ea-bc06-1fe0be380c66',
           },
           {
             title: 'avan’s heart',
             coverSrc: avansHeart,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/e12c05fe-d973-11ea-a727-0f2df3cfb52c',
           },
         ]}
         showDivider
@@ -117,6 +126,7 @@ export default function FantasyBooks() {
           coverSrc: silentMelody,
           title: 'silent melody: a pied piper retelling',
           showTitle: true,
+          universalBookLink: 'https://www.amazon.co.uk/Silent-Melody-Piper-Retelling-Songs/dp/B08YQR638M',
         }}
         seriesOverview={{
           title: 'Songs of the Piper',
@@ -128,10 +138,12 @@ export default function FantasyBooks() {
           {
             title: 'silent melody',
             coverSrc: silentMelody,
+            universalBookLink: 'https://www.amazon.co.uk/Silent-Melody-Piper-Retelling-Songs/dp/B08YQR638M',
           },
           {
             title: 'enchanted melody',
             coverSrc: enchantedMelody,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/e4cd32da-2911-11eb-869c-1f3b2bba8c86',
           },
         ]}
         showDivider
@@ -141,6 +153,7 @@ export default function FantasyBooks() {
           coverSrc: slipperInTheSnow,
           title: 'Slipper in the Snow',
           showTitle: true,
+          universalBookLink: 'https://storyoriginapp.com/universalbooklinks/1851b926-3314-11eb-96f7-a7d124477774',
         }}
         seriesOverview={{
           title: 'A Christmas Fairytale Short Story',
@@ -152,18 +165,22 @@ export default function FantasyBooks() {
           {
             title: 'slipper in the snow',
             coverSrc: slipperInTheSnow,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/1851b926-3314-11eb-96f7-a7d124477774',
           },
           {
             title: 'nettles in the snow',
             coverSrc: nettlesInTheSnow,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/6d5f08f8-3c9f-11eb-ba2e-a35ca568a51d',
           },
           {
             title: 'secrets in the snow',
             coverSrc: secretsInTheSnow,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/bbb1875a-8e2b-11eb-82cf-b35b81295f4a',
           },
           {
             title: 'princess in the snow',
             coverSrc: princessInTheSnow,
+            universalBookLink: 'https://storyoriginapp.com/universalbooklinks/df7e9d30-8e2b-11eb-aa59-574719e7870e',
           },
         ]}
         showDivider
@@ -173,6 +190,7 @@ export default function FantasyBooks() {
           coverSrc: theFoxAndTheTrain,
           title: 'the fox and the train',
           showTitle: false,
+          universalBookLink: 'https://storyoriginapp.com/universalbooklinks/8a715e44-1eb6-11ea-ac8d-a7e9588ab05d',
         }}
         seriesOverview={{
           title: 'The Fox and the Train',
@@ -190,6 +208,7 @@ export default function FantasyBooks() {
           coverSrc: enchantedWaters,
           title: 'enchanted waters',
           showTitle: true,
+          universalBookLink: 'https://storyoriginapp.com/universalbooklinks/18c7e27c-8e2c-11eb-90bf-f709027da5c0',
         }}
         seriesOverview={{
           title: 'A Magical Collection of Short Stories',

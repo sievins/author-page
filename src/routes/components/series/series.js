@@ -8,6 +8,7 @@ Series.propTypes = {
   spotlightedBook: PropTypes.shape({
     coverSrc: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    universalBookLink: PropTypes.string,
     showTitle: PropTypes.bool.isRequired,
   }).isRequired,
   seriesOverview: PropTypes.shape({
@@ -17,19 +18,20 @@ Series.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     coverSrc: PropTypes.string.isRequired,
+    universalBookLink: PropTypes.string,
   })),
   showDivider: PropTypes.bool,
 }
 
 export default function Series({
-  spotlightedBook: { coverSrc, title: spotlightBookTitle, showTitle },
+  spotlightedBook: { coverSrc, title: spotlightBookTitle, showTitle, universalBookLink },
   seriesOverview: { title: seriesOverviewTitle, paragraphs },
   books = [],
   showDivider,
 }) {
   return (
     <>
-      <SpotlightedBook coverSrc={coverSrc} title={spotlightBookTitle} showTitle={showTitle} />
+      <SpotlightedBook coverSrc={coverSrc} title={spotlightBookTitle} showTitle={showTitle} universalBookLink={universalBookLink} />
       <SeriesOverview title={seriesOverviewTitle} paragraphs={paragraphs} />
       <Books books={books} showDivider={showDivider} />
     </>

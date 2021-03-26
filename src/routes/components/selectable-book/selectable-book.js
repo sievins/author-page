@@ -5,13 +5,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useStyles } from '../../../hooks'
 
 const useMuiStyles = makeStyles((theme) => ({
-  image: {
-    cursor: 'pointer',
-  },
   text: {
     textTransform: 'uppercase',
     letterSpacing: '1px',
-    cursor: 'pointer',
     color: theme.palette.text.secondary,
   },
 }))
@@ -26,29 +22,42 @@ SelectableBook.propTypes = {
     text: PropTypes.string,
   }),
   showTitle: PropTypes.bool.isRequired,
+  universalBookLink: PropTypes.string,
 }
 
-export default function SelectableBook({ coverSrc, title, classNames = {}, showTitle }) {
+export default function SelectableBook({ coverSrc, title, classNames = {}, showTitle, universalBookLink }) {
   const classes = useStyles(useMuiStyles)
   const [focus, setFocus] = useState(false)
+
+  const style = {
+    cursor: universalBookLink ? 'pointer' : 'default',
+  }
+
+  const openUniversalBookLink = () => {
+    if (universalBookLink) window.open(universalBookLink)
+  }
 
   return (
     <div className={classNames.container}>
       <Fade in={focus} opacity={0.7}>
         <img
           src={coverSrc}
-          className={`${classes.image} ${classNames.image}`}
+          className={classNames.image}
+          style={style}
           alt="Book cover"
-          onMouseEnter={() => setFocus(true)}
-          onMouseLeave={() => setFocus(false)}
+          onMouseEnter={() => universalBookLink && setFocus(true)}
+          onMouseLeave={() => universalBookLink && setFocus(false)}
+          onClick={openUniversalBookLink}
         />
       </Fade>
       { showTitle &&
         <Fade in={focus} className={classNames.textContainer}>
           <span
             className={`${classes.text} ${classNames.text}`}
-            onMouseEnter={() => setFocus(true)}
-            onMouseLeave={() => setFocus(false)}
+            style={style}
+            onMouseEnter={() => universalBookLink && setFocus(true)}
+            onMouseLeave={() => universalBookLink && setFocus(false)}
+            onClick={openUniversalBookLink}
           >
             {title}
           </span>
