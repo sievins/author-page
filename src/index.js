@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+import './assets/images/fb-preview-logo.jpg'
 import Providers from './providers'
 import * as serviceWorker from './serviceWorker'
 

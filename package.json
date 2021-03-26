@@ -6,7 +6,8 @@
   "author": "Samuel Ievins <sievins8012@gmail.com>",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && node scripts/post-build.js",
+    "build": "react-scripts build && node scripts/post-build.js && npm run build:rename",
+    "build:rename": "renamer --find '/fb-preview-logo\\..+\\.jpg/' --replace 'fb-preview-logo.jpg' 'build/static/media/**'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -27,7 +28,8 @@
     "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "renamer": "^2.0.1"
   },
   "browserslist": {
     "production": [
