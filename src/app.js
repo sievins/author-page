@@ -25,7 +25,7 @@ const preserveWhiteSpace = (string) => (
 const tabs = {
   home: {
     text: 'Home',
-    title: null,
+    title: 'Testing new deployment',
     activeIndex: 0,
   },
   christianBooks: {
