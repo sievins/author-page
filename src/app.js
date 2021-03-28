@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
+import CookieSnackbar from './cookie-snackbar'
 import TopBar from './top-bar'
 import Routes from './routes'
 
@@ -55,6 +56,7 @@ export default function App({ setTopBarHeight }) {
 
   return (
     <div className={classes.app}>
+      <CookieSnackbar />
       <TopBar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} setTopBarHeight={setTopBarHeight} />
       <Routes tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
