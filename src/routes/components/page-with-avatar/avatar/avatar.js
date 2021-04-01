@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'material-ui-image'
 import MuiAvatar from '@material-ui/core/Avatar'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import src from '../../../../assets/images/avatar.png'
@@ -49,10 +50,14 @@ export default function Avatar() {
       {contentHeight => (
         <MuiAvatar
           alt="Alice"
-          src={src}
           className={classes.avatar}
           style={{ marginTop: getMarginTop({ size, contentHeight, isPortrait }) }}
-        />
+        >
+          <Image
+            src={src}
+            style={{ position: 'initial' }}
+          />
+        </MuiAvatar>
       )}
     </ContentHeightContext.Consumer>
   )

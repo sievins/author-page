@@ -6,7 +6,7 @@ import { useOrientation, useStyles } from '../../hooks'
 import { menuHeight } from '../styles'
 import banner from '../../assets/images/banner.jpg'
 
-const calculateBannerHeight = (isLandscape) => isLandscape ? '35vh' : '20vh'
+const calculateBannerHeight = (isLandscape) => isLandscape ? '33vh' : '20vh'
 
 const useMuiStyles = makeStyles((theme) => ({
   container: ({ isExtraSmallScreen, isSmallScreen }) => ({

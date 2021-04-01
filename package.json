@@ -5,8 +5,9 @@
   "repository": "git@github.com:sievins/author-page.git",
   "author": "Samuel Ievins <sievins8012@gmail.com>",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && npm run build:rename",
+    "start": "npm run build:pre && react-scripts start",
+    "build": "npm run build:pre && react-scripts build && npm run build:rename",
+    "build:pre": "node src/scripts/pre-build.js",
     "build:rename": "renamer --find '/fb-preview-logo\\..+\\.jpg/' --replace 'fb-preview-logo.jpg' 'build/static/media/**'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -21,6 +22,7 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.4",
     "clsx": "^1.1.1",
+    "material-ui-image": "^3.3.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -28,7 +30,7 @@
     "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
-    "glob": "^7.1.6",
+    "probe-image-size": "^7.0.1",
     "renamer": "^2.0.1"
   },
   "browserslist": {
