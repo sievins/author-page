@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Fade from './fade'
 import { makeStyles } from '@material-ui/core/styles'
 import { useStyles } from '../../../hooks'
+import Fade from './fade'
+import Image from './image'
 
 const useMuiStyles = makeStyles((theme) => ({
   text: {
@@ -14,18 +15,22 @@ const useMuiStyles = makeStyles((theme) => ({
 
 SelectableBook.propTypes = {
   coverSrc: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
   classNames: PropTypes.shape({
     container: PropTypes.string,
     image: PropTypes.string,
     textContainer: PropTypes.string,
     text: PropTypes.string,
   }),
+  imageDimensions: PropTypes.shape({
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+  }),
   showTitle: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
   universalBookLink: PropTypes.string,
 }
 
-export default function SelectableBook({ coverSrc, title, classNames = {}, showTitle, universalBookLink }) {
+export default function SelectableBook({ coverSrc, classNames = {}, imageDimensions, showTitle, title, universalBookLink }) {
   const classes = useStyles(useMuiStyles)
   const [focus, setFocus] = useState(false)
 
@@ -40,11 +45,11 @@ export default function SelectableBook({ coverSrc, title, classNames = {}, showT
   return (
     <div className={classNames.container}>
       <Fade in={focus} opacity={0.7}>
-        <img
+        <Image
           src={coverSrc}
           className={classNames.image}
           style={style}
-          alt="Book cover"
+          imageDimensions={imageDimensions}
           onMouseEnter={() => universalBookLink && setFocus(true)}
           onMouseLeave={() => universalBookLink && setFocus(false)}
           onClick={openUniversalBookLink}
