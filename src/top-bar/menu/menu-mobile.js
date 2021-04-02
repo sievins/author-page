@@ -67,7 +67,7 @@ export default function MenuMobile({ activeTab, setActiveTab }) {
         <Item primary="Fantasy Books" tabIndex={2} />
         <Item primary="About" tabIndex={3} />
         <Divider />
-        <ListItem button onClick={()=> window.open("https://mailchi.mp/0e212a879f8f/alicegent", "_blank")}>
+        <ListItem button onClick={()=> window.open("https://sendfox.com/AliceIvinya", "_blank")}>
           <ListItemText primary="Newsletter" className={classes.newsletter} classes={{ primary: classes.font }} />
         </ListItem>
       </List>

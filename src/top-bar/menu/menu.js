@@ -5,7 +5,6 @@ import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Button from '@material-ui/core/Button'
-import { showNewsletterSubscription } from './subscriber'
 import { useStyles, useScreenSize } from '../../hooks'
 import { menuHeight } from '../styles'
 
@@ -74,7 +73,13 @@ export default function Menu({ tabs, activeTab, setActiveTab }) {
         <Tab label={tabs.aboutAlice.text} className={classes.tab} />
       </Tabs>
       { showNewsletterButton &&
-        <Button onClick={showNewsletterSubscription} variant="outlined" color="secondary" className={classes.button}>
+        <Button
+          href="https://sendfox.com/AliceIvinya"
+          target="_blank"
+          variant="outlined"
+          color="secondary"
+          className={classes.button}
+        >
           {newsletterText}
         </Button>
       }
