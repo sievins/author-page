@@ -1,1 +1,1 @@
-export { default } from './spotlighted-book'
+export { default } from "./spotlighted-book";

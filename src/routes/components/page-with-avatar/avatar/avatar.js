@@ -1,30 +1,42 @@
-import React from 'react'
-import Image from 'material-ui-image'
-import MuiAvatar from '@material-ui/core/Avatar'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-import src from '../../../../assets/images/avatar.png'
-import { useStyles, useScreenSize, useOrientation } from '../../../../hooks'
-import ContentHeightContext from '../../../../content-height-context'
+import React from "react";
+import Image from "material-ui-image";
+import MuiAvatar from "@material-ui/core/Avatar";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import src from "../../../../assets/images/avatar.png";
+import { useStyles, useScreenSize, useOrientation } from "../../../../hooks";
+import ContentHeightContext from "../../../../content-height-context";
 
-const getMarginTop = ({ size, contentHeight, isPortrait }) => (
-  isPortrait
-    ? null
-    : (contentHeight - size) / 2
-)
+const getMarginTop = ({ size, contentHeight, isPortrait }) =>
+  isPortrait ? null : (contentHeight - size) / 2;
 
-const getSize = ({ isSmallScreen, isMediumScreen, isLargeScreen, isPortrait }) => (
-  isMediumScreen && isPortrait ? 35.5 : // iPad Pro
-  isSmallScreen && isPortrait ? 34 : // iPad
-  isLargeScreen ? 35.5 :
-  isMediumScreen ? 34 :
-  isSmallScreen ? 25 : 20
-)
+const getSize = ({
+  isSmallScreen,
+  isMediumScreen,
+  isLargeScreen,
+  isPortrait,
+}) =>
+  isMediumScreen && isPortrait
+    ? 35.5 // iPad Pro
+    : isSmallScreen && isPortrait
+    ? 34 // iPad
+    : isLargeScreen
+    ? 35.5
+    : isMediumScreen
+    ? 34
+    : isSmallScreen
+    ? 25
+    : 20;
 
 const useMuiStyles = makeStyles((theme) => ({
   avatar: ({ isSmallScreen, isMediumScreen, isLargeScreen, isPortrait }) => {
-    const size = getSize({ isSmallScreen, isMediumScreen, isLargeScreen, isPortrait })
-    const alignSelf = isPortrait ? 'center' : 'unset'
-    const margin = isPortrait ? 5 : 0
+    const size = getSize({
+      isSmallScreen,
+      isMediumScreen,
+      isLargeScreen,
+      isPortrait,
+    });
+    const alignSelf = isPortrait ? "center" : "unset";
+    const margin = isPortrait ? 5 : 0;
 
     return {
       alignSelf,
@@ -32,33 +44,34 @@ const useMuiStyles = makeStyles((theme) => ({
       height: theme.spacing(size),
       marginTop: theme.spacing(margin),
       marginBottom: theme.spacing(margin),
-      maxWidth: '100%',
-    }
+      maxWidth: "100%",
+    };
   },
-}))
+}));
 
 export default function Avatar() {
-  const classes = useStyles(useMuiStyles)
-  const { isSmallScreen, isMediumScreen, isLargeScreen } = useScreenSize()
-  const { isPortrait } = useOrientation()
-  const theme = useTheme()
+  const classes = useStyles(useMuiStyles);
+  const { isSmallScreen, isMediumScreen, isLargeScreen } = useScreenSize();
+  const { isPortrait } = useOrientation();
+  const theme = useTheme();
 
-  const size = theme.spacing(getSize({ isSmallScreen, isMediumScreen, isLargeScreen, isPortrait }))
+  const size = theme.spacing(
+    getSize({ isSmallScreen, isMediumScreen, isLargeScreen, isPortrait })
+  );
 
   return (
     <ContentHeightContext.Consumer>
-      {contentHeight => (
+      {(contentHeight) => (
         <MuiAvatar
           alt="Alice"
           className={classes.avatar}
-          style={{ marginTop: getMarginTop({ size, contentHeight, isPortrait }) }}
+          style={{
+            marginTop: getMarginTop({ size, contentHeight, isPortrait }),
+          }}
         >
-          <Image
-            src={src}
-            style={{ position: 'initial' }}
-          />
+          <Image src={src} style={{ position: "initial" }} />
         </MuiAvatar>
       )}
     </ContentHeightContext.Consumer>
-  )
+  );
 }

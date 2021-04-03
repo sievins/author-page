@@ -1,1 +1,1 @@
-export { default } from './selectable-book'
+export { default } from "./selectable-book";

@@ -1,32 +1,32 @@
 body {
   margin: 0;
-  font-family: 'proxima-nova-semibold', sans-serif;
+  font-family: "proxima-nova-semibold", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 /* Headings */
 @font-face {
-  font-family: 'frieght-disp-bold';
-  src: url('assets/fonts/freight-disp-bold.otf') format('opentype'),
-  url('assets/fonts/freight-disp-bold.otf') format('opentype');
+  font-family: "frieght-disp-bold";
+  src: url("assets/fonts/freight-disp-bold.otf") format("opentype"),
+    url("assets/fonts/freight-disp-bold.otf") format("opentype");
 }
 
 /* Body */
 @font-face {
-  font-family: 'proxima-nova-semibold';
-  src: url('assets/fonts/proxima-nova-semibold.otf') format('opentype'),
-  url('assets/fonts/proxima-nova-semibold.otf') format('opentype');
+  font-family: "proxima-nova-semibold";
+  src: url("assets/fonts/proxima-nova-semibold.otf") format("opentype"),
+    url("assets/fonts/proxima-nova-semibold.otf") format("opentype");
 }
 
 /* Signature */
 @font-face {
-  font-family: 'intro-script';
-  src: url('assets/fonts/intro-script.otf') format('opentype'),
-  url('assets/fonts/intro-script.otf') format('opentype');
+  font-family: "intro-script";
+  src: url("assets/fonts/intro-script.otf") format("opentype"),
+    url("assets/fonts/intro-script.otf") format("opentype");
 }

@@ -1,11 +1,11 @@
-import React from 'react'
-import { PageWithAvatar } from '../components'
-import Biography from './biography'
+import React from "react";
+import { PageWithAvatar } from "../components";
+import Biography from "./biography";
 
-export default function   AboutAlice() {
+export default function AboutAlice() {
   return (
     <PageWithAvatar>
       <Biography />
     </PageWithAvatar>
-  )
+  );
 }

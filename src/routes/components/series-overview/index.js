@@ -1,1 +1,1 @@
-export { default } from './series-overview'
+export { default } from "./series-overview";

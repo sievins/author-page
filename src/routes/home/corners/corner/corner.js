@@ -1,63 +1,79 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import Grid from '@material-ui/core/Grid'
-import ButtonBase from '@material-ui/core/ButtonBase'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
-import divider from '../../../../assets/images/divider.png'
-import { useStyles } from '../../../../hooks'
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import Grid from "@material-ui/core/Grid";
+import ButtonBase from "@material-ui/core/ButtonBase";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import divider from "../../../../assets/images/divider.png";
+import { useStyles } from "../../../../hooks";
 
 const useMuiStyles = makeStyles((theme) => ({
   grid: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
   },
   button: ({ isExtraSmallScreen }) => ({
-    margin: '0 auto',
+    margin: "0 auto",
     marginBottom: isExtraSmallScreen && theme.spacing(2),
   }),
-  paper: ({ isExtraSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen, isPortrait }) => {
+  paper: ({
+    isExtraSmallScreen,
+    isSmallScreen,
+    isMediumScreen,
+    isLargeScreen,
+    isPortrait,
+  }) => {
     const width =
-      isMediumScreen && isPortrait ? 60 : // iPad Pro
-      isSmallScreen && isPortrait ? 48 : // iPad
-      isLargeScreen ? 60 :
-      isMediumScreen ? 48 :
-      isSmallScreen ? 30 :
-      isExtraSmallScreen ? 28 : 28
+      isMediumScreen && isPortrait
+        ? 60 // iPad Pro
+        : isSmallScreen && isPortrait
+        ? 48 // iPad
+        : isLargeScreen
+        ? 60
+        : isMediumScreen
+        ? 48
+        : isSmallScreen
+        ? 30
+        : isExtraSmallScreen
+        ? 28
+        : 28;
 
     return {
       padding: theme.spacing(2),
       width: theme.spacing(width),
-      textAlign: 'center',
-      margin: 'auto',
-      cursor: 'pointer',
-    }
+      textAlign: "center",
+      margin: "auto",
+      cursor: "pointer",
+    };
   },
   h1: {
-    fontFamily: 'frieght-disp-bold',
-    fontSize: 'x-large',
+    fontFamily: "frieght-disp-bold",
+    fontSize: "x-large",
   },
   h2: {
-    fontFamily: 'intro-script',
-    fontSize: 'x-large',
+    fontFamily: "intro-script",
+    fontSize: "x-large",
   },
   divider: ({ isSmallScreen, isMediumScreen, isLargeScreen }) => {
-    const marginBottom =
-      isLargeScreen ? -36 :
-      isMediumScreen ? -30 :
-      isSmallScreen ? -14 : -16
+    const marginBottom = isLargeScreen
+      ? -36
+      : isMediumScreen
+      ? -30
+      : isSmallScreen
+      ? -14
+      : -16;
 
     return {
-      width: 'inherit',
+      width: "inherit",
       marginBottom,
-    }
+    };
   },
-}))
+}));
 
 export default function Corner({ title, authorName, onClick }) {
-  const [elevation, setElevation] = useState(1)
-  const classes = useStyles(useMuiStyles)
+  const [elevation, setElevation] = useState(1);
+  const classes = useStyles(useMuiStyles);
 
   return (
     <Grid item xs={12} sm={12} className={classes.grid}>
@@ -78,12 +94,11 @@ export default function Corner({ title, authorName, onClick }) {
         </Paper>
       </ButtonBase>
     </Grid>
-  )
+  );
 }
 
 Corner.propTypes = {
   title: PropTypes.string.isRequired,
   authorName: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-}
-
+};

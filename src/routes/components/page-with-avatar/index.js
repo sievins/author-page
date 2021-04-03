@@ -1,1 +1,1 @@
-export { default } from './page-with-avatar'
+export { default } from "./page-with-avatar";
