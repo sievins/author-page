@@ -1,1 +1,1 @@
-export { default } from './newsletter-snackbar'
+export { default } from "./newsletter-snackbar";

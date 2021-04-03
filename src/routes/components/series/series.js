@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import SpotlightedBook from '../spotlighted-book'
-import SeriesOverview from '../series-overview'
-import Books from '../books'
+import React from "react";
+import PropTypes from "prop-types";
+import SpotlightedBook from "../spotlighted-book";
+import SeriesOverview from "../series-overview";
+import Books from "../books";
 
 Series.propTypes = {
   spotlightedBook: PropTypes.shape({
@@ -15,25 +15,37 @@ Series.propTypes = {
     title: PropTypes.string.isRequired,
     paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
-  books: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    coverSrc: PropTypes.string.isRequired,
-    universalBookLink: PropTypes.string,
-  })),
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      coverSrc: PropTypes.string.isRequired,
+      universalBookLink: PropTypes.string,
+    })
+  ),
   showDivider: PropTypes.bool,
-}
+};
 
 export default function Series({
-  spotlightedBook: { coverSrc, title: spotlightBookTitle, showTitle, universalBookLink },
+  spotlightedBook: {
+    coverSrc,
+    title: spotlightBookTitle,
+    showTitle,
+    universalBookLink,
+  },
   seriesOverview: { title: seriesOverviewTitle, paragraphs },
   books = [],
   showDivider,
 }) {
   return (
     <>
-      <SpotlightedBook coverSrc={coverSrc} title={spotlightBookTitle} showTitle={showTitle} universalBookLink={universalBookLink} />
+      <SpotlightedBook
+        coverSrc={coverSrc}
+        title={spotlightBookTitle}
+        showTitle={showTitle}
+        universalBookLink={universalBookLink}
+      />
       <SeriesOverview title={seriesOverviewTitle} paragraphs={paragraphs} />
       <Books books={books} showDivider={showDivider} />
     </>
-  )
+  );
 }

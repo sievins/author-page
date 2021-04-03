@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
-import Snackbar from '@material-ui/core/Snackbar'
+import React, { useState } from "react";
+import Snackbar from "@material-ui/core/Snackbar";
 
-const referredFromNewsletterSignup = document.referrer === 'https://sendfox.com/'
+const referredFromNewsletterSignup =
+  document.referrer === "https://sendfox.com/";
 
 export default function NewsletterSnackbar() {
-  const [open, setOpen] = useState(referredFromNewsletterSignup)
+  const [open, setOpen] = useState(referredFromNewsletterSignup);
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return
+    if (reason === "clickaway") {
+      return;
     }
 
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   return (
     <Snackbar
@@ -21,5 +22,5 @@ export default function NewsletterSnackbar() {
       autoHideDuration={6000}
       message="Thank you for signing up to my newsletter - have a wonderful day!"
     />
-  )
+  );
 }

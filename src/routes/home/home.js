@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { PageWithAvatar } from '../components'
-import Corners from './corners'
+import React from "react";
+import PropTypes from "prop-types";
+import { PageWithAvatar } from "../components";
+import Corners from "./corners";
 
 const tabPropType = PropTypes.shape({
   text: PropTypes.string.isRequired,
   activeIndex: PropTypes.number.isRequired,
-}).isRequired
+}).isRequired;
 
 Home.propTypes = {
   tabs: PropTypes.shape({
@@ -14,12 +14,12 @@ Home.propTypes = {
     fantasyBooks: tabPropType,
   }).isRequired,
   setActiveTab: PropTypes.func.isRequired,
-}
+};
 
 export default function Home({ tabs, setActiveTab }) {
   return (
     <PageWithAvatar>
       <Corners tabs={tabs} setActiveTab={setActiveTab} />
     </PageWithAvatar>
-  )
+  );
 }

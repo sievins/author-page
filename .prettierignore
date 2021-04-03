@@ -1,0 +1,7 @@
+src/assets/images/covers/meta.json
+
+build
+node_modules
+package-lock.json
+
+.idea

@@ -1,29 +1,28 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect } from "react";
 
 export default function useOrientation() {
   const [orientations, setOrientations] = useState({
     isLandscape: true,
     isPortrait: false,
-  })
+  });
 
   useLayoutEffect(() => {
     const handleResize = () => {
-      const orientation = window.innerHeight / window.innerWidth > 1
-        ? 'portrait'
-        : 'landscape'
+      const orientation =
+        window.innerHeight / window.innerWidth > 1 ? "portrait" : "landscape";
 
       setOrientations({
-        isLandscape: orientation === 'landscape',
-        isPortrait: orientation === 'portrait',
-      })
-    }
+        isLandscape: orientation === "landscape",
+        isPortrait: orientation === "portrait",
+      });
+    };
 
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize);
 
-    handleResize()
+    handleResize();
 
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  return orientations
+  return orientations;
 }

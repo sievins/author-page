@@ -1,12 +1,14 @@
-import path from 'path'
-import coverMetaData from '../assets/images/covers/meta.json'
+import path from "path";
+import coverMetaData from "../assets/images/covers/meta.json";
 
-const removeHash = fileName => fileName.replace(/\..+\./, '.')
+const removeHash = (fileName) => fileName.replace(/\..+\./, ".");
 
 export const getHeight = ({ width, src }) => {
-  const coverName = removeHash(path.basename(src))
+  const coverName = removeHash(path.basename(src));
 
-  const { naturalHeight, naturalWidth } = coverMetaData.find(cover => cover.coverName === coverName)
+  const { naturalHeight, naturalWidth } = coverMetaData.find(
+    (cover) => cover.coverName === coverName
+  );
 
-  return naturalHeight * width / naturalWidth
-}
+  return (naturalHeight * width) / naturalWidth;
+};

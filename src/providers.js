@@ -1,18 +1,18 @@
-import React, { useLayoutEffect, useState } from 'react'
-import { ThemeProvider } from '@material-ui/styles'
-import theme from './theme'
-import ContentHeightContext from './content-height-context'
-import App from './app'
-import { useWindowSize } from './hooks'
+import React, { useLayoutEffect, useState } from "react";
+import { ThemeProvider } from "@material-ui/styles";
+import theme from "./theme";
+import ContentHeightContext from "./content-height-context";
+import App from "./app";
+import { useWindowSize } from "./hooks";
 
 export default function Providers() {
-  const [contentHeight, setContentHeight] = useState(null)
-  const [topBarHeight, setTopBarHeight] = useState(null)
-  const size = useWindowSize()
+  const [contentHeight, setContentHeight] = useState(null);
+  const [topBarHeight, setTopBarHeight] = useState(null);
+  const size = useWindowSize();
 
   useLayoutEffect(() => {
-    setContentHeight(size.height - topBarHeight)
-  }, [size.height, topBarHeight])
+    setContentHeight(size.height - topBarHeight);
+  }, [size.height, topBarHeight]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -20,5 +20,5 @@ export default function Providers() {
         <App setTopBarHeight={setTopBarHeight} />
       </ContentHeightContext.Provider>
     </ThemeProvider>
-  )
+  );
 }

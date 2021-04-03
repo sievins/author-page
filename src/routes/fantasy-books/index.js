@@ -1,1 +1,1 @@
-export { default } from './fantasy-books'
+export { default } from "./fantasy-books";
