@@ -7,6 +7,11 @@ import Tab from "@material-ui/core/Tab";
 import Button from "@material-ui/core/Button";
 import { useStyles, useScreenSize } from "../../hooks";
 import { menuHeight } from "../styles";
+import {
+  getNewsletterSubcription,
+  subscribeNewsletter,
+  unsubscribeNewsletter,
+} from "../../services/storage";
 
 const useMuiStyles = makeStyles((theme) => ({
   bar: {
@@ -52,8 +57,9 @@ Menu.propTypes = {
 export default function Menu({ tabs, activeTab, setActiveTab }) {
   const classes = useStyles(useMuiStyles);
   const { isExtraSmallScreen, isSmallScreen, isLargeScreen } = useScreenSize();
-
-  const showNewsletterButton = !isExtraSmallScreen && !isSmallScreen;
+  let newsletterSubcription = getNewsletterSubcription();
+  const showNewsletterButton =
+    !isExtraSmallScreen && !isSmallScreen && !newsletterSubcription;
   const newsletterText = isLargeScreen
     ? "Subscribe to newsletter"
     : "Newsletter";
@@ -75,7 +81,6 @@ export default function Menu({ tabs, activeTab, setActiveTab }) {
       {showNewsletterButton && (
         <Button
           href="https://sendfox.com/AliceIvinya"
-          target="_blank"
           variant="outlined"
           color="secondary"
           className={classes.button}

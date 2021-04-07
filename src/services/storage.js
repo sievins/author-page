@@ -1,14 +1,17 @@
 //this service is made to handle all localstorage variables
-const NEWSLETTER = "newsletter";
+const NEWSLETTERKEY = "newsletter";
+let newsLetterValue = localStorage.getItem(NEWSLETTERKEY);
 
 export const getNewsletterSubcription = () => {
-  return localStorage.getItem(NEWSLETTER);
+  return newsLetterValue;
 };
 
 export const subscribeNewsletter = () => {
-  localStorage.setItem(NEWSLETTER, true);
+  localStorage.setItem(NEWSLETTERKEY, true);
+  newsLetterValue = true;
 };
 
 export const unsubscribeNewsletter = () => {
-  localStorage.removeItem(NEWSLETTER);
+  localStorage.removeItem(NEWSLETTERKEY);
+  newsLetterValue = false;
 };
