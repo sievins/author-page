@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Snackbar from "@material-ui/core/Snackbar";
-import { subscribeNewsletter } from "../services/storage";
+import { items, setItem } from "../services/storage";
 
 const referredFromNewsletterSignup =
   document.referrer === "https://sendfox.com/";
 
-if (referredFromNewsletterSignup) subscribeNewsletter();
 export default function NewsletterSnackbar() {
   const [open, setOpen] = useState(referredFromNewsletterSignup);
   const handleClose = (event, reason) => {
@@ -15,6 +14,10 @@ export default function NewsletterSnackbar() {
 
     setOpen(false);
   };
+  useEffect(() => {
+    if (referredFromNewsletterSignup)
+      setItem(items.isSubscribedToNewsletter, true);
+  });
 
   return (
     <Snackbar
