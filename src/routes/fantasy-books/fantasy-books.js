@@ -18,6 +18,7 @@ import secretsInTheSnow from "../../assets/images/covers/secrets-in-the-snow.jpg
 import princessInTheSnow from "../../assets/images/covers/princess-in-the-snow.jpg";
 import theFoxAndTheTrain from "../../assets/images/covers/the-fox-and-the-train.jpg";
 import enchantedWaters from "../../assets/images/covers/enchanted-waters.jpg";
+import girlsOfMightAndMagic from "../../assets/images/covers/girls-of-might-and-magic.jpg";
 import theWidowAndTheBeast from "../../assets/images/covers/the-widow-and-the-beast.jpg";
 
 const useMuiStyles = makeStyles((theme) => ({
@@ -235,6 +236,23 @@ export default function FantasyBooks() {
             "What really lies beneath the waves?",
             "Dive into our magical collection of short stories written by award-winning and up-and-coming authors and follow the ocean’s call.",
             "Meet murderous kelpies, hear the mermaid’s song, find a kidnapped prince, and explore the beautiful underwater kingdoms. Befriend selkie royalty, break fearsome curses, and swoon as you fall in love.",
+          ],
+        }}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: girlsOfMightAndMagic,
+          title: "Girls of Might and Magic",
+          showTitle: true,
+          universalBookLink: "https://books2read.com/u/bOREpK",
+        }}
+        seriesOverview={{
+          title: "An Anthology By Diverse Books with Magic",
+          paragraphs: [
+            "Find your might. Discover your magic.",
+            "A disabled teen tracks down an elusive sea beast. A young, Indian detective finds a magical artifact. A Black teen who can see the dead solves a murder mystery. An Ethiopian girl discovers magical secrets when she is kidnapped by her teacher. A teen survivor of a deadly plague realizes she and her robot companion are not alone.",
+            "Across realms, worlds, and dimensions we bring you sixteen fantasy and/or science fiction tales that explore the tribulations of growing up. Full of diverse characters and #ownvoices authors, the protagonists in these coming-of-age YA adventures will not only discover powerful magic but discover themselves along the way. Don't miss this magical collection of stories about witches, fae, ghosts, vampires, werewolves, jinn, and more!",
           ],
         }}
         showDivider
