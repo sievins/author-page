@@ -3,8 +3,8 @@ import { useStyles } from "../../hooks";
 import { makeStyles } from "@material-ui/core/styles";
 import Underlay from "../underlay";
 import { Series } from "../components";
-import sarahsFootsteps from "../../assets/images/covers/sarahs-footsteps.jpeg";
-import leaving from "../../assets/images/covers/leaving.jpg";
+import sarahsFootsteps from "../../assets/images/covers/sarahs-footsteps-60.jpg";
+import leaving from "../../assets/images/covers/leaving-50.jpg";
 
 const useMuiStyles = makeStyles((theme) => ({
   initialPadding: {
