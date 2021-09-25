@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Corner from "./corner";
@@ -15,7 +16,6 @@ Corners.propTypes = {
     christianBooks: tabPropType,
     fantasyBooks: tabPropType,
   }).isRequired,
-  setActiveTab: PropTypes.func.isRequired,
 };
 
 const useMuiStyles = makeStyles((theme) => ({
@@ -38,21 +38,22 @@ const useMuiStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Corners({ tabs, setActiveTab }) {
+export default function Corners({ tabs }) {
   const classes = useStyles(useMuiStyles);
+  const history = useHistory();
 
   return (
     <Grid container className={classes.container}>
       <Corner
         title={tabs.christianBooks.text}
         authorName="Alice Gent"
-        onClick={() => setActiveTab(tabs.christianBooks.activeIndex)}
+        onClick={() => history.push(tabs.christianBooks.path)}
       />
       <div className={classes.divider} />
       <Corner
         title={tabs.fantasyBooks.text}
         authorName="Alice Ivinya"
-        onClick={() => setActiveTab(tabs.fantasyBooks.activeIndex)}
+        onClick={() => history.push(tabs.fantasyBooks.path)}
       />
     </Grid>
   );

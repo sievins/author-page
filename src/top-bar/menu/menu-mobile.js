@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
@@ -37,14 +38,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const tabPropType = PropTypes.shape({
+  text: PropTypes.string.isRequired,
+  activeIndex: PropTypes.number.isRequired,
+}).isRequired;
+
 MenuMobile.propTypes = {
-  activeTab: PropTypes.number.isRequired,
-  setActiveTab: PropTypes.func.isRequired,
+  tabs: PropTypes.shape({
+    home: tabPropType,
+    christianBooks: tabPropType,
+    fantasyBooks: tabPropType,
+    aboutAlice: tabPropType,
+  }).isRequired,
 };
 
-export default function MenuMobile({ activeTab, setActiveTab }) {
+export default function MenuMobile({ tabs }) {
   const classes = useStyles();
+  const history = useHistory();
+  const location = useLocation();
   const [open, setOpen] = React.useState(false);
+
+  const { activeIndex } = Object.values(tabs).find(
+    (tab) => tab.path === location.hash
+  );
 
   const toggleDrawer = (toggle) => () => {
     setOpen(toggle);
@@ -53,8 +69,13 @@ export default function MenuMobile({ activeTab, setActiveTab }) {
   const Item = ({ primary, tabIndex }) => (
     <ListItem
       button
-      className={clsx(activeTab === tabIndex && classes.selected)}
-      onClick={() => setActiveTab(tabIndex)}
+      className={clsx(activeIndex === tabIndex && classes.selected)}
+      onClick={() => {
+        const path = Object.values(tabs).find(
+          (tab) => tab.activeIndex === tabIndex
+        ).path;
+        history.push(path);
+      }}
     >
       <ListItemText primary={primary} classes={{ primary: classes.font }} />
     </ListItem>
@@ -101,11 +122,11 @@ export default function MenuMobile({ activeTab, setActiveTab }) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" classes={{ root: classes.font }}>
-            {activeTab === 1
+            {activeIndex === 1
               ? "Christian Books"
-              : activeTab === 2
+              : activeIndex === 2
               ? "Fantasy Books"
-              : activeTab === 3
+              : activeIndex === 3
               ? "About"
               : "Alice"}
           </Typography>

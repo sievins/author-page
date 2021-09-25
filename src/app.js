@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import NewsletterSnackbar from "./newsletter-snackbar";
@@ -25,21 +25,25 @@ const preserveWhiteSpace = (string) => (
 
 const tabs = {
   home: {
+    path: "",
     text: "Home",
     title: null,
     activeIndex: 0,
   },
   christianBooks: {
+    path: "#/christian",
     text: "Christian Books",
     title: preserveWhiteSpace("Christian  Fiction"),
     activeIndex: 1,
   },
   fantasyBooks: {
+    path: "#/fantasy",
     text: "Fantasy Books",
     title: preserveWhiteSpace("Young  Adult  Fantasy"),
     activeIndex: 2,
   },
   aboutAlice: {
+    path: "#/about",
     text: "About Alice",
     title: preserveWhiteSpace("Alice  Ivinya    - & -    Alice  Gent"),
     activeIndex: 3,
@@ -52,18 +56,12 @@ App.propTypes = {
 
 export default function App({ setTopBarHeight }) {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <div className={classes.app}>
       <NewsletterSnackbar />
-      <TopBar
-        tabs={tabs}
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        setTopBarHeight={setTopBarHeight}
-      />
-      <Routes tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+      <TopBar tabs={tabs} setTopBarHeight={setTopBarHeight} />
+      <Routes tabs={tabs} />
     </div>
   );
 }
