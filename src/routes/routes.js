@@ -5,6 +5,7 @@ import Home from "./home";
 import ChristianBooks from "./chirstian-books";
 import FantasyBooks from "./fantasy-books";
 import AboutAlice from "./about-alice";
+import FeathersOfSnowSynopsis from "./feathers-of-snow-synopsis";
 
 const tabPropType = PropTypes.shape({
   text: PropTypes.string.isRequired,
@@ -30,6 +31,8 @@ export default function Routes({ tabs }) {
     <FantasyBooks />
   ) : tabs.aboutAlice.path === path ? (
     <AboutAlice />
+  ) : tabs.feathersOfSnowSynopsis.path === path ? (
+    <FeathersOfSnowSynopsis />
   ) : (
     <Home tabs={tabs} />
   );

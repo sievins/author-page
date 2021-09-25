@@ -70,7 +70,7 @@ export default function Menu({ tabs }) {
 
   const activeTab = Object.values(tabs).find(
     (tab) => tab.path === location.hash
-  ).activeIndex;
+  ).activeIndex || 0;
 
   return (
     <AppBar position={position} className={classes.bar}>

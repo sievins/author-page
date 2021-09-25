@@ -48,6 +48,10 @@ const tabs = {
     title: preserveWhiteSpace("Alice  Ivinya    - & -    Alice  Gent"),
     activeIndex: 3,
   },
+  feathersOfSnowSynopsis: {
+    path: "#/feathers-of-snow-synopsis",
+    title: preserveWhiteSpace("Feathers of Snow - Synopsis"),
+  },
 };
 
 App.propTypes = {
