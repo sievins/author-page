@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -45,11 +46,11 @@ Menu.propTypes = {
     fantasyBooks: tabPropType,
     aboutAlice: tabPropType,
   }).isRequired,
-  activeTab: PropTypes.number.isRequired,
-  setActiveTab: PropTypes.func.isRequired,
 };
 
-export default function Menu({ tabs, activeTab, setActiveTab }) {
+export default function Menu({ tabs }) {
+  const history = useHistory();
+  const location = useLocation();
   const classes = useStyles(useMuiStyles);
   const { isExtraSmallScreen, isSmallScreen, isLargeScreen } = useScreenSize();
 
@@ -58,11 +59,18 @@ export default function Menu({ tabs, activeTab, setActiveTab }) {
     ? "Subscribe to newsletter"
     : "Newsletter";
 
-  const handleChange = (event, tab) => {
-    setActiveTab(tab);
+  const handleChange = (event, activeIndex) => {
+    const path = Object.values(tabs).find(
+      (tab) => tab.activeIndex === activeIndex
+    ).path;
+    history.push(path);
   };
 
   const position = isExtraSmallScreen || isSmallScreen ? "static" : "fixed";
+
+  const activeTab = Object.values(tabs).find(
+    (tab) => tab.path === location.hash
+  ).activeIndex;
 
   return (
     <AppBar position={position} className={classes.bar}>

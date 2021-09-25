@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -43,11 +44,11 @@ Banner.propTypes = {
     fantasyBooks: tabPropType,
     aboutAlice: tabPropType,
   }).isRequired,
-  activeTab: PropTypes.number.isRequired,
 };
 
-export default function Banner({ tabs, activeTab }) {
+export default function Banner({ tabs }) {
   const classes = useStyles(useMuiStyles);
+  const location = useLocation();
   const { isLandscape } = useOrientation();
   const headingElement = useRef(null);
   const [headingMarginTop, setHeadingMarginTop] = useState(null);
@@ -62,10 +63,10 @@ export default function Banner({ tabs, activeTab }) {
     const marginTop = `calc(${menuHeightPx} + ${visibleBannerHeight} / 2 - ${elementHeight})`;
 
     setHeadingMarginTop(marginTop);
-  }, [headingElement, isLandscape, activeTab]);
+  }, [headingElement, isLandscape, location.hash]);
 
   const { title } = Object.values(tabs).find(
-    (tab) => tab.activeIndex === activeTab
+    (tab) => tab.path === location.hash
   );
 
   return (

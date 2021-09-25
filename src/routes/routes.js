@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import Home from "./home";
 import ChristianBooks from "./chirstian-books";
@@ -15,20 +16,21 @@ Routes.propTypes = {
     home: tabPropType,
     aboutAlice: tabPropType,
   }).isRequired,
-  activeTab: PropTypes.number.isRequired,
-  setActiveTab: PropTypes.func.isRequired,
 };
 
-export default function Routes({ tabs, activeTab, setActiveTab }) {
-  return tabs.home.activeIndex === activeTab ? (
-    <Home setActiveTab={setActiveTab} tabs={tabs} />
-  ) : tabs.christianBooks.activeIndex === activeTab ? (
+export default function Routes({ tabs }) {
+  const location = useLocation();
+  const path = location.hash;
+
+  return tabs.home.path === path ? (
+    <Home tabs={tabs} />
+  ) : tabs.christianBooks.path === path ? (
     <ChristianBooks />
-  ) : tabs.fantasyBooks.activeIndex === activeTab ? (
+  ) : tabs.fantasyBooks.path === path ? (
     <FantasyBooks />
-  ) : tabs.aboutAlice.activeIndex === activeTab ? (
+  ) : tabs.aboutAlice.path === path ? (
     <AboutAlice />
   ) : (
-    <Home setActiveTab={setActiveTab} tabs={tabs} />
+    <Home tabs={tabs} />
   );
 }

@@ -13,13 +13,12 @@ Home.propTypes = {
     christianBooks: tabPropType,
     fantasyBooks: tabPropType,
   }).isRequired,
-  setActiveTab: PropTypes.func.isRequired,
 };
 
-export default function Home({ tabs, setActiveTab }) {
+export default function Home({ tabs }) {
   return (
     <PageWithAvatar>
-      <Corners tabs={tabs} setActiveTab={setActiveTab} />
+      <Corners tabs={tabs} />
     </PageWithAvatar>
   );
 }
