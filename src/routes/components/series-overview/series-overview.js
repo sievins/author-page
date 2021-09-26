@@ -19,7 +19,7 @@ const useMuiStyles = makeStyles((theme) => ({
 
 SeriesOverview.propTypes = {
   title: PropTypes.string.isRequired,
-  paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
+  paragraphs: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
 export default function SeriesOverview({ title, paragraphs }) {
@@ -37,9 +37,20 @@ export default function SeriesOverview({ title, paragraphs }) {
         className={classes.text}
       >
         <Grid item xs={8} md={6}>
-          {paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+          {paragraphs.map((paragraph, index) => {
+            const paragraphIsArray = Array.isArray(paragraph);
+            return paragraphIsArray ? (
+              <p key={`paragraph-${index}`}>
+                {paragraph.map((item, itemIndex) => (
+                  <React.Fragment key={`paragraph-${index}-item-${itemIndex}`}>
+                    {item}
+                  </React.Fragment>
+                ))}
+              </p>
+            ) : (
+              <p key={`paragraph-${index}`}>{paragraph}</p>
+            );
+          })}
         </Grid>
       </Grid>
     </>

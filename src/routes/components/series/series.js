@@ -13,7 +13,7 @@ Series.propTypes = {
   }).isRequired,
   seriesOverview: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
+    paragraphs: PropTypes.arrayOf(PropTypes.node).isRequired,
   }).isRequired,
   books: PropTypes.arrayOf(
     PropTypes.shape({
