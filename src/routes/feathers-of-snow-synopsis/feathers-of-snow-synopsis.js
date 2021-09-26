@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import { useStyles } from "../../hooks";
 import Underlay from "../underlay";
@@ -51,13 +52,13 @@ export default function FeathersOfSnowSynopsis() {
             "Brianna is heart broken and leaves with Hai Rong and Jeremiah, following the voice on the wind that calls her name.",
             [
               "The story continues in Feathers of Blood: ",
-              <a
+              <Link
                 href="https://www.amazon.com/dp/B08VX2YQFF/"
                 target="_blank"
                 rel="noreferrer"
               >
                 https://www.amazon.com/dp/B08VX2YQFF/
-              </a>,
+              </Link>,
             ],
           ],
         }}
