@@ -68,9 +68,9 @@ export default function Menu({ tabs }) {
 
   const position = isExtraSmallScreen || isSmallScreen ? "static" : "fixed";
 
-  const activeTab = Object.values(tabs).find(
-    (tab) => tab.path === location.hash
-  ).activeIndex || 0;
+  const activeTab =
+    Object.values(tabs).find((tab) => tab.path === location.hash).activeIndex ||
+    0;
 
   return (
     <AppBar position={position} className={classes.bar}>
