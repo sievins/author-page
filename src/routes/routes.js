@@ -10,12 +10,14 @@ import FeathersOfSnowSynopsis from "./feathers-of-snow-synopsis";
 const tabPropType = PropTypes.shape({
   text: PropTypes.string.isRequired,
   activeIndex: PropTypes.number.isRequired,
+  path: PropTypes.string.isRequired,
 }).isRequired;
 
 Routes.propTypes = {
   tabs: PropTypes.shape({
     home: tabPropType,
     aboutAlice: tabPropType,
+    fantasyBooks: tabPropType,
   }).isRequired,
 };
 
@@ -28,7 +30,7 @@ export default function Routes({ tabs }) {
   ) : tabs.christianBooks.path === path ? (
     <ChristianBooks />
   ) : tabs.fantasyBooks.path === path ? (
-    <FantasyBooks />
+    <FantasyBooks tabs={tabs} />
   ) : tabs.aboutAlice.path === path ? (
     <AboutAlice />
   ) : tabs.feathersOfSnowSynopsis.path === path ? (

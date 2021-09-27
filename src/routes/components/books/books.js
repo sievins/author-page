@@ -13,6 +13,9 @@ const useMuiStyles = makeStyles((theme) => ({
   text: {
     fontSize: "calc(6px + 1vmin)",
   },
+  chip: {
+    marginTop: theme.spacing(1),
+  },
   divider: {
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(8),
@@ -26,6 +29,9 @@ Books.propTypes = {
       title: PropTypes.string.isRequired,
       coverSrc: PropTypes.string.isRequired,
       universalBookLink: PropTypes.string,
+      chipLabel: PropTypes.string,
+      chipPath: PropTypes.string,
+      showChip: PropTypes.bool,
     })
   ),
   showDivider: PropTypes.bool,
@@ -39,24 +45,37 @@ export default function Books({ books, showDivider = false }) {
       <Grid item xs={5} sm={8} md={8} lg={6}>
         <Grid container spacing={10} justify="center">
           {books.length !== 0 &&
-            books.map(({ title, coverSrc, universalBookLink }) => (
-              <Grid item key={title} xs={12} sm={6} md={4}>
-                <Grid container justify="center">
-                  <Grid item xs={10}>
-                    <SelectableBook
-                      coverSrc={coverSrc}
-                      title={title}
-                      classNames={{
-                        image: classes.image,
-                        text: classes.text,
-                      }}
-                      universalBookLink={universalBookLink}
-                      showTitle
-                    />
+            books.map(
+              ({
+                title,
+                coverSrc,
+                universalBookLink,
+                showChip,
+                chipLabel,
+                chipPath,
+              }) => (
+                <Grid item key={title} xs={12} sm={6} md={4}>
+                  <Grid container justify="center">
+                    <Grid item xs={10}>
+                      <SelectableBook
+                        coverSrc={coverSrc}
+                        title={title}
+                        classNames={{
+                          image: classes.image,
+                          text: classes.text,
+                          chip: classes.chip,
+                        }}
+                        universalBookLink={universalBookLink}
+                        showTitle
+                        showChip={showChip}
+                        chipLabel={chipLabel}
+                        chipPath={chipPath}
+                      />
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
-            ))}
+              )
+            )}
         </Grid>
         {showDivider && <Divider className={classes.divider} />}
       </Grid>
