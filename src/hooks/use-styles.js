@@ -1,7 +1,7 @@
 import useOrientation from "./use-orientation";
 import useScreenSize from "./use-screen-size";
 
-export default function useStyles(useMuiStyles) {
+export default function useStyles(useMuiStyles, props = {}) {
   const { isLandscape, isPortrait } = useOrientation();
   const {
     isExtraSmallScreen,
@@ -17,6 +17,7 @@ export default function useStyles(useMuiStyles) {
     isSmallScreen,
     isMediumScreen,
     isLargeScreen,
+    ...props,
   });
 
   return classes;

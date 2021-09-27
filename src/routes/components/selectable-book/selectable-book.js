@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { useStyles } from "../../../hooks";
+import Chip from "../chip";
 import Fade from "./fade";
 import Image from "./image";
 
@@ -14,12 +15,16 @@ const useMuiStyles = makeStyles((theme) => ({
 }));
 
 SelectableBook.propTypes = {
+  chipLabel: PropTypes.string,
+  chipPath: PropTypes.string,
+  showChip: PropTypes.bool,
   coverSrc: PropTypes.string.isRequired,
   classNames: PropTypes.shape({
     container: PropTypes.string,
     image: PropTypes.string,
     textContainer: PropTypes.string,
     text: PropTypes.string,
+    chip: PropTypes.string,
   }),
   imageDimensions: PropTypes.shape({
     width: PropTypes.number.isRequired,
@@ -31,9 +36,12 @@ SelectableBook.propTypes = {
 };
 
 export default function SelectableBook({
+  chipLabel,
+  chipPath,
   coverSrc,
   classNames = {},
   imageDimensions,
+  showChip = false,
   showTitle,
   title,
   universalBookLink,
@@ -74,6 +82,9 @@ export default function SelectableBook({
             {title}
           </span>
         </Fade>
+      )}
+      {showChip && (
+        <Chip className={classNames.chip} label={chipLabel} href={chipPath} />
       )}
     </div>
   );

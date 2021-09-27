@@ -15,24 +15,34 @@ const useMuiStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(5),
   },
   textContainer: {
+    marginBottom: ({ showChip }) =>
+      showChip ? theme.spacing(1) : theme.spacing(5),
+  },
+  chip: {
     marginBottom: theme.spacing(5),
   },
 }));
 
 SpotlightedBook.propTypes = {
+  chipLabel: PropTypes.string,
+  chipPath: PropTypes.string,
   coverSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   universalBookLink: PropTypes.string,
+  showChip: PropTypes.bool.isRequired,
   showTitle: PropTypes.bool.isRequired,
 };
 
 export default function SpotlightedBook({
+  chipLabel,
+  chipPath,
   coverSrc,
   title,
   universalBookLink,
+  showChip,
   showTitle,
 }) {
-  const classes = useStyles(useMuiStyles);
+  const classes = useStyles(useMuiStyles, { showChip });
   const theme = useTheme();
   const { isExtraSmallScreen, isSmallScreen } = useScreenSize();
 
@@ -45,14 +55,18 @@ export default function SpotlightedBook({
 
   return (
     <SelectableBook
+      chipLabel={chipLabel}
+      chipPath={chipPath}
       coverSrc={coverSrc}
       title={title}
       classNames={{
         container: classes.container,
         image: classes.image,
         textContainer: classes.textContainer,
+        chip: classes.chip,
       }}
       universalBookLink={universalBookLink}
+      showChip={showChip}
       showTitle={showTitle}
       imageDimensions={{
         width,

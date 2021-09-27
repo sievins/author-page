@@ -6,6 +6,9 @@ import Books from "../books";
 
 Series.propTypes = {
   spotlightedBook: PropTypes.shape({
+    chipLabel: PropTypes.string,
+    chipPath: PropTypes.string,
+    showChip: PropTypes.bool,
     coverSrc: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     universalBookLink: PropTypes.string,
@@ -20,6 +23,9 @@ Series.propTypes = {
       title: PropTypes.string.isRequired,
       coverSrc: PropTypes.string.isRequired,
       universalBookLink: PropTypes.string,
+      chipLabel: PropTypes.string,
+      chipPath: PropTypes.string,
+      showChip: PropTypes.bool,
     })
   ),
   showDivider: PropTypes.bool,
@@ -27,8 +33,11 @@ Series.propTypes = {
 
 export default function Series({
   spotlightedBook: {
+    chipLabel,
+    chipPath,
     coverSrc,
     title: spotlightBookTitle,
+    showChip = false,
     showTitle,
     universalBookLink,
   },
@@ -39,8 +48,11 @@ export default function Series({
   return (
     <>
       <SpotlightedBook
+        chipLabel={chipLabel}
+        chipPath={chipPath}
         coverSrc={coverSrc}
         title={spotlightBookTitle}
+        showChip={showChip}
         showTitle={showTitle}
         universalBookLink={universalBookLink}
       />
