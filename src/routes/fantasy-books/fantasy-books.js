@@ -44,7 +44,7 @@ export default function FantasyBooks({ tabs }) {
       <div className={classes.initialPadding} />
       <Series
         spotlightedBook={{
-          chipLabel: "Read synopsis",
+          chipLabel: "Read Synopsis",
           chipPath: tabs.feathersOfSnowSynopsis.path,
           showChip: true,
           coverSrc: feathersOfSnow,
@@ -68,7 +68,7 @@ export default function FantasyBooks({ tabs }) {
             coverSrc: feathersOfSnow,
             universalBookLink:
               "https://storyoriginapp.com/universalbooklinks/40987692-2912-11eb-8eba-9744d8f5a192",
-            chipLabel: "Read synopsis",
+            chipLabel: "Read Synopsis",
             chipPath: tabs.feathersOfSnowSynopsis.path,
             showChip: true,
           },

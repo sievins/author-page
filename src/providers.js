@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme";
 import ContentHeightContext from "./content-height-context";
+import ScrollToTop from "./scroll-to-top";
 import App from "./app";
 import { useWindowSize } from "./hooks";
 
@@ -17,6 +18,7 @@ export default function Providers() {
 
   return (
     <Router>
+      <ScrollToTop />
       <ThemeProvider theme={theme}>
         <ContentHeightContext.Provider value={contentHeight}>
           <App setTopBarHeight={setTopBarHeight} />
