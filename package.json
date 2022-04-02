@@ -9,8 +9,8 @@
     "build": "npm run build:pre && react-scripts build && npm run build:rename",
     "build:pre": "node src/scripts/pre-build.js",
     "build:rename": "renamer --find '/fb-preview-logo\\..+\\.jpg/' --replace 'fb-preview-logo.jpg' 'build/static/media/**'",
-    "lint": "npx prettier --write .",
-    "lint:ci": "npx prettier --check .",
+    "style": "npx prettier --write .",
+    "style:ci": "npx prettier --check .",
     "test": "react-scripts test",
     "prepare": "husky install",
     "eject": "react-scripts eject"

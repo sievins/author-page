@@ -21,10 +21,10 @@ jobs:
         with:
           node-version: "16"
 
-      - name: Install dependencies, lint, test and build
+      - name: Install dependencies, style, test and build
         run: |
           npm install
-          npm run lint:ci
+          npm run style:ci
           npm run test -- --passWithNoTests
           npm run build
 
