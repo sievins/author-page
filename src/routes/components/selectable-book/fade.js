@@ -29,10 +29,13 @@ export default function Fade({
   children,
   className,
 }) {
+  const nodeRef = React.useRef(null);
+
   return (
-    <Transition in={inProp} timeout={duration}>
+    <Transition in={inProp} timeout={duration} nodeRef={nodeRef}>
       {(state) => (
         <div
+          ref={nodeRef}
           style={{
             ...defaultStyle,
             ...transitionStyles(opacity)[state],

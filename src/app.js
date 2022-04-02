@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
+import ScrollToTop from "./scroll-to-top";
 import NewsletterSnackbar from "./newsletter-snackbar";
 import TopBar from "./top-bar";
 import Routes from "./routes";
@@ -63,6 +64,7 @@ export default function App({ setTopBarHeight }) {
 
   return (
     <div className={classes.app}>
+      <ScrollToTop />
       <NewsletterSnackbar />
       <TopBar tabs={tabs} setTopBarHeight={setTopBarHeight} />
       <Routes tabs={tabs} />
