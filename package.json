@@ -45,7 +45,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "2.6.2",
-    "probe-image-size": "^7.0.1",
+    "probe-image-size": "^7.2.3",
     "renamer": "^4.0.0"
   },
   "browserslist": {
