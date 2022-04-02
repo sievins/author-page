@@ -1,4 +1,4 @@
-import path from "path";
+import path from "path-browserify";
 import coverMetaData from "../assets/images/covers/meta.json";
 
 const removeHash = (fileName) => fileName.replace(/\..+\./, ".");
