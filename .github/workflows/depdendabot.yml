@@ -1,4 +1,4 @@
-name: CI
+name: Auto Merge Dependabot
 
 on:
   pull_request:
