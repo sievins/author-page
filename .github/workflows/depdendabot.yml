@@ -3,8 +3,6 @@ name: CI
 on:
   pull_request:
     branches:
-      - master
-    branches-ignore:
       - "dependabot/**"
 
   workflow_dispatch:
@@ -29,13 +27,8 @@ jobs:
           npm run test -- --passWithNoTests
           npm run build
 
-      - name: Deploy to S3 staging environment
-        uses: jakejarvis/s3-sync-action@v0.5.1
+      - name: Automatically merge Dependabot PRs
+        uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
-          args: --acl public-read --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_STAGING_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "eu-west-1"
-          SOURCE_DIR: "build"
+          target: minor
+          github-token: ${{ secrets.GH_ACCESS_TOKEN_REPO_SCOPE }}
