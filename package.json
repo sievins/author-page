@@ -46,7 +46,7 @@
     "lint-staged": "^10.5.4",
     "prettier": "2.2.1",
     "probe-image-size": "^7.0.1",
-    "renamer": "^2.0.1"
+    "renamer": "^4.0.0"
   },
   "browserslist": {
     "production": [
