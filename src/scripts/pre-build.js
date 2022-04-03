@@ -3,6 +3,7 @@
 const probe = require("probe-image-size");
 const fs = require("fs");
 const path = require("path");
+const del = require("del");
 
 const coversDirectory = path.resolve(__dirname, "../assets/images/covers");
 const metaFileName = "meta.json";
@@ -27,3 +28,5 @@ fs.writeFileSync(
   path.resolve(coversDirectory, metaFileName),
   JSON.stringify(dimensions)
 );
+
+del.sync(["build/**"]);

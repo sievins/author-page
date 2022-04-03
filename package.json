@@ -27,6 +27,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "@material-ui/styles": "^4.11.5",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^14.0.4",
@@ -34,13 +35,14 @@
     "material-ui-image": "^3.3.2",
     "path-browserify": "^1.0.1",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
     "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
+    "del": "^6.0.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
