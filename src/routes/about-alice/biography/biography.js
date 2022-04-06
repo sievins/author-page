@@ -53,10 +53,6 @@ export default function Biography() {
         retellings. When she's not off galavanting in other worlds, she loves
         walking the dog and spending time with her church family.
       </p>
-      <p>
-        She also writes Christian Fiction under the pen name Alice Gent and
-        writes relevant Christ-centred articles for Heirs Magazine.
-      </p>
       <p>Alice hopes to change the world for the better, one word at a time.</p>
       <p>
         Follow Alice on Facebook for all her books:{" "}
