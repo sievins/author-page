@@ -53,6 +53,10 @@ const tabs = {
     path: "#/feathers-of-snow-synopsis",
     title: preserveWhiteSpace("Feathers of Snow - Synopsis"),
   },
+  feathersOfBloodSynopsis: {
+    path: "#/feathers-of-blood-synopsis",
+    title: preserveWhiteSpace("Feathers of Blood - Synopsis"),
+  },
 };
 
 App.propTypes = {
