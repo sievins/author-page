@@ -88,8 +88,8 @@ export default function MenuMobile({ tabs }) {
       onClick={toggleDrawer(false)}
     >
       <List>
-        <Item primary="Christian Books" tabIndex={1} />
-        <Item primary="Fantasy Books" tabIndex={2} />
+        <Item primary="Fantasy Books" tabIndex={1} />
+        <Item primary="Christian Books" tabIndex={2} />
         <Item primary="About" tabIndex={3} />
         <Divider />
         <ListItem
@@ -123,9 +123,9 @@ export default function MenuMobile({ tabs }) {
           </IconButton>
           <Typography variant="h6" classes={{ root: classes.font }}>
             {activeIndex === 1
-              ? "Christian Books"
-              : activeIndex === 2
               ? "Fantasy Books"
+              : activeIndex === 2
+              ? "Christian Books"
               : activeIndex === 3
               ? "About"
               : "Alice"}

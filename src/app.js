@@ -31,16 +31,16 @@ const tabs = {
     title: null,
     activeIndex: 0,
   },
-  christianBooks: {
-    path: "#/christian",
-    text: "Christian Books",
-    title: preserveWhiteSpace("Christian  Fiction"),
-    activeIndex: 1,
-  },
   fantasyBooks: {
     path: "#/fantasy",
     text: "Fantasy Books",
     title: preserveWhiteSpace("Young  Adult  Fantasy"),
+    activeIndex: 1,
+  },
+  christianBooks: {
+    path: "#/christian",
+    text: "Christian Books",
+    title: preserveWhiteSpace("Christian  Fiction"),
     activeIndex: 2,
   },
   aboutAlice: {
