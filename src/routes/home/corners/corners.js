@@ -45,15 +45,15 @@ export default function Corners({ tabs }) {
   return (
     <Grid container className={classes.container}>
       <Corner
-        title={tabs.christianBooks.text}
-        authorName="Alice Gent"
-        onClick={() => history.push(tabs.christianBooks.path)}
-      />
-      <div className={classes.divider} />
-      <Corner
         title={tabs.fantasyBooks.text}
         authorName="Alice Ivinya"
         onClick={() => history.push(tabs.fantasyBooks.path)}
+      />
+      <div className={classes.divider} />
+      <Corner
+        title={tabs.christianBooks.text}
+        authorName="Alice Gent"
+        onClick={() => history.push(tabs.christianBooks.path)}
       />
     </Grid>
   );

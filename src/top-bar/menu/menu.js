@@ -76,8 +76,8 @@ export default function Menu({ tabs }) {
     <AppBar position={position} className={classes.bar}>
       <Tabs value={activeTab} onChange={handleChange} centered>
         <Tab label={tabs.home.text} className={classes.home} />
-        <Tab label={tabs.christianBooks.text} className={classes.tab} />
         <Tab label={tabs.fantasyBooks.text} className={classes.tab} />
+        <Tab label={tabs.christianBooks.text} className={classes.tab} />
         <Tab label={tabs.aboutAlice.text} className={classes.tab} />
       </Tabs>
       {showNewsletterButton && (
