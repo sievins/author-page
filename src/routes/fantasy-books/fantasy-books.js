@@ -77,6 +77,9 @@ export default function FantasyBooks({ tabs }) {
             coverSrc: feathersOfBlood,
             universalBookLink:
               "https://storyoriginapp.com/universalbooklinks/f9375808-8e2a-11eb-81ee-d7f4d46dc19f",
+            chipLabel: "Read Synopsis",
+            chipPath: tabs.feathersOfBloodSynopsis.path,
+            showChip: true,
           },
         ]}
         showDivider

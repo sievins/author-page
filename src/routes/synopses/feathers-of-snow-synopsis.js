@@ -32,6 +32,7 @@ export default function FeathersOfSnowSynopsis() {
             "The second book in the Kingdom of Birds and Beasts trilogy, Feathers of Blood, is coming out on the 6th October 2021!",
             "Has it been a while since you read Feathers of Snow? If so, here is a handy recap of the events of book one!",
             "Please don’t read any further if you are yet to read Feathers of Snow, as this synopsis contains spoilers.",
+            "*",
             "Brianna is lady-in-waiting to the vain and cruel Princess Elyanna in the country of Sybera. She has been serving her since she was six years old.",
             "When they were twelve, Elyanna locked Brianna in a barrel for several hours. Since then, Brianna has suffered from nightmares, flashbacks and a habit of buckling under pressure. She also struggles to breathe in small, dark spaces. Brianna has never told anyone what happened, though Queen Geraldina knows.",
             "Princess Elyanna hears the news that she has been betrothed to Prince Jian, the second son of the Borderland King and Queen. This marriage has been arranged so that Sybera can access the Borderland’s military might to defend against the growing threat of Killamore to the south.",
@@ -51,13 +52,13 @@ export default function FeathersOfSnowSynopsis() {
             "Elyanna is told that Brianna has been killed for stealing her position and pretending to be the princess.",
             "Brianna is heart broken and leaves with Hai Rong and Jeremiah, following the voice on the wind that calls her name.",
             [
-              "The story continues in Feathers of Blood: ",
+              "The story continues in ",
               <Link
-                href="https://www.amazon.com/dp/B08VX2YQFF/"
+                href="https://storyoriginapp.com/universalbooklinks/f9375808-8e2a-11eb-81ee-d7f4d46dc19f"
                 target="_blank"
                 rel="noreferrer"
               >
-                https://www.amazon.com/dp/B08VX2YQFF/
+                Feathers of Blood
               </Link>,
             ],
           ],
