@@ -6,6 +6,7 @@ import Underlay from "../underlay";
 import { Series } from "../components";
 import feathersOfSnow from "../../assets/images/covers/feathers-of-snow-50.jpg";
 import feathersOfBlood from "../../assets/images/covers/feathers-of-blood-50.jpg";
+import kingdomOfFeathers from "../../assets/images/covers/kingdom-of-feathers-50.jpg";
 import theFlawedPrincess from "../../assets/images/covers/the-flawed-princess-50.jpg";
 import queenAvan from "../../assets/images/covers/queen-avan.jpg";
 import avansGift from "../../assets/images/covers/avans-gift-50.jpg";
@@ -80,6 +81,12 @@ export default function FantasyBooks({ tabs }) {
             chipLabel: "Read Synopsis",
             chipPath: tabs.feathersOfBloodSynopsis.path,
             showChip: true,
+          },
+          {
+            title: "kingdom of feathers",
+            coverSrc: kingdomOfFeathers,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/653c193c-852c-11ec-bbb9-8f1c86eb3df8",
           },
         ]}
         showDivider
