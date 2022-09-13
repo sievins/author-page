@@ -21,8 +21,8 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies, style, test and build
-        run: |
-          npm ci
+        run: | # Remove --legacy-peer-deps when mui is upgraded to v5
+          npm ci --legacy-peer-deps
           npm run style:ci
           npm run test -- --passWithNoTests
           npm run build
