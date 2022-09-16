@@ -23,6 +23,7 @@ import enchantedWaters from "../../assets/images/covers/enchanted-waters-50.jpg"
 import enchantedForests from "../../assets/images/covers/enchanted-forests-60.jpg";
 import onceUponAName from "../../assets/images/covers/once upon a name.jpg";
 import girlsOfMightAndMagic from "../../assets/images/covers/girls-of-might-and-magic-80.jpg";
+import crownOfGlass from "../../assets/images/covers/crown-of-glass-60.jpg";
 import theWidowAndTheBeast from "../../assets/images/covers/the-widow-and-the-beast-50.jpg";
 
 const useMuiStyles = makeStyles((theme) => ({
@@ -333,12 +334,32 @@ export default function FantasyBooks({ tabs }) {
           coverSrc: theWidowAndTheBeast,
           title: "the widow and the beast",
           showTitle: true,
+          universalBookLink:
+            "https://storyoriginapp.com/universalbooklinks/fb91ebf8-fd1a-11ec-8638-cfd1208557e7",
         }}
         seriesOverview={{
           title: "Kingdoms of the Faery Path",
-          paragraphs: ["Coming soon."],
+          paragraphs: [
+            "In this world, fairytale monsters are very real...",
+            "Faery has been under a curse for two hundred years, twisting its inhabitants into monsters. Now all who walk the Faery Path risk their life and their sanity.",
+            "Determined to find her missing husband, Aoife sets off down the Faery Path alone. She knows the rules. She must not eat the fae food, strike a bargain or leave the path. But she discovers a world far more terrifying and beautiful than she ever imagined.",
+            "And it doesn’t want her to leave.",
+          ],
         }}
+        books={[
+          {
+            title: "the widow and the beast",
+            coverSrc: theWidowAndTheBeast,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/fb91ebf8-fd1a-11ec-8638-cfd1208557e7",
+          },
+          {
+            title: "crown of glass - coming april 2023",
+            coverSrc: crownOfGlass,
+          },
+        ]}
       />
+      <div className={classes.initialPadding} />
     </Underlay>
   );
 }
