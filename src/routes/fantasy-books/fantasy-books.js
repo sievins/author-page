@@ -20,6 +20,7 @@ import secretsInTheSnow from "../../assets/images/covers/secrets-in-the-snow-40.
 import princessInTheSnow from "../../assets/images/covers/princess-in-the-snow-40.jpg";
 import theFoxAndTheTrain from "../../assets/images/covers/the-fox-and-the-train-50.jpg";
 import enchantedWaters from "../../assets/images/covers/enchanted-waters-50.jpg";
+import enchantedForests from "../../assets/images/covers/enchanted-forests-60.jpg";
 import girlsOfMightAndMagic from "../../assets/images/covers/girls-of-might-and-magic-80.jpg";
 import theWidowAndTheBeast from "../../assets/images/covers/the-widow-and-the-beast-50.jpg";
 
@@ -263,6 +264,20 @@ export default function FantasyBooks({ tabs }) {
             "Meet murderous kelpies, hear the mermaid’s song, find a kidnapped prince, and explore the beautiful underwater kingdoms. Befriend selkie royalty, break fearsome curses, and swoon as you fall in love.",
           ],
         }}
+        books={[
+          {
+            title: "enchanted waters",
+            coverSrc: enchantedWaters,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/18c7e27c-8e2c-11eb-90bf-f709027da5c0",
+          },
+          {
+            title: "enchanted forests",
+            coverSrc: enchantedForests,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/c3045708-b594-11ec-a01d-2f0fad4b0613",
+          },
+        ]}
         showDivider
       />
       <Series
