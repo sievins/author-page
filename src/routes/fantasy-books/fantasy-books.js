@@ -21,6 +21,7 @@ import princessInTheSnow from "../../assets/images/covers/princess-in-the-snow-4
 import theFoxAndTheTrain from "../../assets/images/covers/the-fox-and-the-train-50.jpg";
 import enchantedWaters from "../../assets/images/covers/enchanted-waters-50.jpg";
 import enchantedForests from "../../assets/images/covers/enchanted-forests-60.jpg";
+import onceUponAName from "../../assets/images/covers/once upon a name.jpg";
 import girlsOfMightAndMagic from "../../assets/images/covers/girls-of-might-and-magic-80.jpg";
 import theWidowAndTheBeast from "../../assets/images/covers/the-widow-and-the-beast-50.jpg";
 
@@ -282,6 +283,26 @@ export default function FantasyBooks({ tabs }) {
       />
       <Series
         spotlightedBook={{
+          coverSrc: onceUponAName,
+          title: "Once Upon a Name",
+          showTitle: true,
+          universalBookLink:
+            "https://storyoriginapp.com/universalbooklinks/529312f2-01e9-11ec-a12d-c36c379705b7",
+        }}
+        seriesOverview={{
+          title: "Tales of the Strange and Unusual",
+          paragraphs: [
+            "What’s in a name? Names have power, names have magic, names can set the course for a great destiny.",
+            "Once upon a time, twenty author friends accepted a challenge by a fairy tale name generator. Now, twenty new characters have adventurous tales to tell.",
+            "In this clean YA anthology, meet goddesses, empresses, countesses, wannabe sorceress apprentices, female leaders of wolf packs, and guardian frog sidekicks. Search for missing persons with a hunter turned detective.",
+            "Swoon over the sultana who must prove she is fit to rule. Cavort with our demons, wraiths, and demigods and lose your soul to the Bone Marsh. Root for a genie’s freedom or bite your nails as you pray for the witch to get the spell right. And yes, feel your heart palpitate at unexpected romance.",
+            "Escape into our strange and unusual collection of short stories written by award-winning and up-and-coming authors. Join us in far-off lands and learn ... what is in a name.",
+          ],
+        }}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
           coverSrc: girlsOfMightAndMagic,
           title: "Girls of Might and Magic",
           showTitle: true,
@@ -292,7 +313,7 @@ export default function FantasyBooks({ tabs }) {
           paragraphs: [
             "Find your might. Discover your magic.",
             "A disabled teen tracks down an elusive sea beast. A young, Indian detective finds a magical artifact. A Black teen who can see the dead solves a murder mystery. An Ethiopian girl discovers magical secrets when she is kidnapped by her teacher. A teen survivor of a deadly plague realizes she and her robot companion are not alone.",
-            "Across realms, worlds, and dimensions we bring you sixteen fantasy and/or science fiction tales that explore the tribulations of growing up. Full of diverse characters and #ownvoices authors, the protagonists in these coming-of-age YA adventures will not only discover powerful magic but discover themselves along the way. Don't miss this magical collection of stories about witches, fae, ghosts, vampires, werewolves, jinn, and more!",
+            "Across realms, worlds, and dimensions we bring you sixteen fantasy and/or science fiction tales that explore the tribulations of growing up. Full of diverse characters and #ownvoices authors, the protagonists in these coming-of-age YA adventures will not only discover powerful magic but discover themselves along the way. Don’t miss this magical collection of stories about witches, fae, ghosts, vampires, werewolves, jinn, and more!",
           ],
         }}
         showDivider
