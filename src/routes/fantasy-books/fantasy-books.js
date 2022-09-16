@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useStyles } from "../../hooks";
 import Underlay from "../underlay";
 import { Series } from "../components";
+import kingdomOfBirdsAndBeasts from "../../assets/images/covers/kingdom-of-birds-and-beasts-40.jpg";
 import feathersOfSnow from "../../assets/images/covers/feathers-of-snow-50.jpg";
 import feathersOfBlood from "../../assets/images/covers/feathers-of-blood-50.jpg";
 import kingdomOfFeathers from "../../assets/images/covers/kingdom-of-feathers-50.jpg";
@@ -79,14 +80,10 @@ export default function FantasyBooks({ tabs }) {
       />
       <Series
         spotlightedBook={{
-          chipLabel: "Read Synopsis",
-          chipPath: tabs.feathersOfSnowSynopsis.path,
-          showChip: true,
-          coverSrc: feathersOfSnow,
-          title: "feathers of snow",
-          showTitle: true,
+          coverSrc: kingdomOfBirdsAndBeasts,
+          title: "Kingdom of Birds and Beasts",
           universalBookLink:
-            "https://storyoriginapp.com/universalbooklinks/40987692-2912-11eb-8eba-9744d8f5a192",
+            "https://storyoriginapp.com/universalbooklinks/1356076a-053b-11ed-8065-2753e514144d",
         }}
         seriesOverview={{
           title: "Kingdom of Birds and Beasts",

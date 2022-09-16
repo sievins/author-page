@@ -14,9 +14,9 @@ const calculateUnderlayHeight = ({
     : isMediumScreen
     ? "48vh"
     : isSmallScreen
-    ? "38vh"
+    ? "42vh"
     : isExtraSmallScreen
-    ? "31vh"
+    ? "36vh"
     : "48vh";
 
 const useMuiStyles = makeStyles((theme) => ({
