@@ -3,11 +3,12 @@ import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import { useOrientation, useStyles } from "../../hooks";
+import { useOrientation, useScreenSize, useStyles } from "../../hooks";
 import { menuHeight } from "../styles";
 import banner from "../../assets/images/banner.jpg";
 
-const calculateBannerHeight = (isLandscape) => (isLandscape ? "33vh" : "20vh");
+const calculateBannerHeight = ({ isLandscape, isLargeScreen }) =>
+  isLandscape ? (isLargeScreen ? "33vh" : "26vh") : "20vh";
 
 const useMuiStyles = makeStyles((theme) => ({
   container: ({ isExtraSmallScreen, isSmallScreen }) => ({
@@ -20,9 +21,9 @@ const useMuiStyles = makeStyles((theme) => ({
     fontSize: "xx-large",
     color: theme.palette.text.secondary,
   },
-  banner: ({ isLandscape }) => ({
+  banner: (props) => ({
     backgroundImage: `url("${banner}")`,
-    height: calculateBannerHeight(isLandscape),
+    height: calculateBannerHeight(props),
     width: "100%",
 
     // Create the parallax scrolling effect
@@ -50,20 +51,22 @@ export default function Banner({ tabs }) {
   const classes = useStyles(useMuiStyles);
   const location = useLocation();
   const { isLandscape } = useOrientation();
+  const { isLargeScreen } = useScreenSize();
   const headingElement = useRef(null);
   const [headingMarginTop, setHeadingMarginTop] = useState(null);
 
   useLayoutEffect(() => {
     const menuHeightPx = `${menuHeight}px`;
-    const visibleBannerHeight = `(${calculateBannerHeight(
-      isLandscape
-    )} - ${menuHeight}px)`;
+    const visibleBannerHeight = `(${calculateBannerHeight({
+      isLandscape,
+      isLargeScreen,
+    })} - ${menuHeight}px)`;
     const elementHeight = `${headingElement.current.clientHeight}px`;
 
     const marginTop = `calc(${menuHeightPx} + ${visibleBannerHeight} / 2 - ${elementHeight})`;
 
     setHeadingMarginTop(marginTop);
-  }, [headingElement, isLandscape, location.hash]);
+  }, [headingElement, isLandscape, isLargeScreen, location.hash]);
 
   const { title } = Object.values(tabs).find(
     (tab) => tab.path === location.hash
