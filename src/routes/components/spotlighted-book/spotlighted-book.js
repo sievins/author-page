@@ -26,7 +26,9 @@ const useMuiStyles = makeStyles((theme) => ({
 SpotlightedBook.propTypes = {
   chipLabel: PropTypes.string,
   chipPath: PropTypes.string,
+  chipTooltip: PropTypes.string,
   coverSrc: PropTypes.string.isRequired,
+  isChipLink: PropTypes.bool,
   title: PropTypes.string.isRequired,
   universalBookLink: PropTypes.string,
   showChip: PropTypes.bool.isRequired,
@@ -36,7 +38,9 @@ SpotlightedBook.propTypes = {
 export default function SpotlightedBook({
   chipLabel,
   chipPath,
+  chipTooltip,
   coverSrc,
+  isChipLink,
   title,
   universalBookLink,
   showChip,
@@ -57,6 +61,7 @@ export default function SpotlightedBook({
     <SelectableBook
       chipLabel={chipLabel}
       chipPath={chipPath}
+      chipTooltip={chipTooltip}
       coverSrc={coverSrc}
       title={title}
       classNames={{
@@ -72,6 +77,7 @@ export default function SpotlightedBook({
         width,
         height,
       }}
+      isChipLink={isChipLink}
     />
   );
 }

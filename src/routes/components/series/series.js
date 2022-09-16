@@ -8,8 +8,10 @@ Series.propTypes = {
   spotlightedBook: PropTypes.shape({
     chipLabel: PropTypes.string,
     chipPath: PropTypes.string,
+    chipTooltip: PropTypes.string,
     showChip: PropTypes.bool,
     coverSrc: PropTypes.string.isRequired,
+    isChipLink: PropTypes.bool,
     title: PropTypes.string.isRequired,
     universalBookLink: PropTypes.string,
     showTitle: PropTypes.bool.isRequired,
@@ -35,7 +37,9 @@ export default function Series({
   spotlightedBook: {
     chipLabel,
     chipPath,
+    chipTooltip,
     coverSrc,
+    isChipLink,
     title: spotlightBookTitle,
     showChip = false,
     showTitle,
@@ -50,7 +54,9 @@ export default function Series({
       <SpotlightedBook
         chipLabel={chipLabel}
         chipPath={chipPath}
+        chipTooltip={chipTooltip}
         coverSrc={coverSrc}
+        isChipLink={isChipLink}
         title={spotlightBookTitle}
         showChip={showChip}
         showTitle={showTitle}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
+import Tooltip from "@material-ui/core/Tooltip";
 import { useStyles } from "../../../hooks";
 import Chip from "../chip";
 import Fade from "./fade";
@@ -17,6 +18,7 @@ const useMuiStyles = makeStyles((theme) => ({
 SelectableBook.propTypes = {
   chipLabel: PropTypes.string,
   chipPath: PropTypes.string,
+  chipTooltip: PropTypes.string,
   showChip: PropTypes.bool,
   coverSrc: PropTypes.string.isRequired,
   classNames: PropTypes.shape({
@@ -30,6 +32,7 @@ SelectableBook.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
   }),
+  isChipLink: PropTypes.bool,
   showTitle: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
   universalBookLink: PropTypes.string,
@@ -38,9 +41,11 @@ SelectableBook.propTypes = {
 export default function SelectableBook({
   chipLabel,
   chipPath,
+  chipTooltip = "",
   coverSrc,
   classNames = {},
   imageDimensions,
+  isChipLink,
   showChip = false,
   showTitle,
   title,
@@ -84,7 +89,14 @@ export default function SelectableBook({
         </Fade>
       )}
       {showChip && (
-        <Chip className={classNames.chip} label={chipLabel} href={chipPath} />
+        <Tooltip title={chipTooltip} placement="right">
+          <Chip
+            className={classNames.chip}
+            label={chipLabel}
+            href={chipPath}
+            isLink={isChipLink}
+          />
+        </Tooltip>
       )}
     </div>
   );

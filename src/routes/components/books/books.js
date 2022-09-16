@@ -41,9 +41,9 @@ export default function Books({ books, showDivider = false }) {
   const classes = useStyles(useMuiStyles);
 
   return (
-    <Grid container justify="center">
+    <Grid container justifyContent="center">
       <Grid item xs={5} sm={8} md={8} lg={6}>
-        <Grid container spacing={10} justify="center">
+        <Grid container spacing={10} justifyContent="center">
           {books.length !== 0 &&
             books.map(
               ({
@@ -55,7 +55,7 @@ export default function Books({ books, showDivider = false }) {
                 chipPath,
               }) => (
                 <Grid item key={title} xs={12} sm={6} md={4}>
-                  <Grid container justify="center">
+                  <Grid container justifyContent="center">
                     <Grid item xs={10}>
                       <SelectableBook
                         coverSrc={coverSrc}
