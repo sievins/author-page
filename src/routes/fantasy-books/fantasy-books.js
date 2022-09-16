@@ -256,6 +256,11 @@ export default function FantasyBooks({ tabs }) {
           showTitle: true,
           universalBookLink:
             "https://storyoriginapp.com/universalbooklinks/18c7e27c-8e2c-11eb-90bf-f709027da5c0",
+          showChip: true,
+          isChipLink: false,
+          chipLabel: "Charitable",
+          chipTooltip:
+            "All proceeds donated to charity (Oceana & The Rainforest Foundation)",
         }}
         seriesOverview={{
           title: "A Magical Collection of Short Stories",
@@ -288,6 +293,11 @@ export default function FantasyBooks({ tabs }) {
           showTitle: true,
           universalBookLink:
             "https://storyoriginapp.com/universalbooklinks/529312f2-01e9-11ec-a12d-c36c379705b7",
+          showChip: true,
+          isChipLink: false,
+          chipLabel: "Charitable",
+          chipTooltip:
+            "All proceeds donated to charity in support of reading and literacy",
         }}
         seriesOverview={{
           title: "Tales of the Strange and Unusual",
