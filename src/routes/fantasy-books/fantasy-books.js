@@ -48,6 +48,37 @@ export default function FantasyBooks({ tabs }) {
       <div className={classes.initialPadding} />
       <Series
         spotlightedBook={{
+          coverSrc: theWidowAndTheBeast,
+          title: "the widow and the beast",
+          showTitle: true,
+          universalBookLink:
+            "https://storyoriginapp.com/universalbooklinks/fb91ebf8-fd1a-11ec-8638-cfd1208557e7",
+        }}
+        seriesOverview={{
+          title: "Kingdoms of the Faery Path",
+          paragraphs: [
+            "In this world, fairytale monsters are very real...",
+            "Faery has been under a curse for two hundred years, twisting its inhabitants into monsters. Now all who walk the Faery Path risk their life and their sanity.",
+            "Determined to find her missing husband, Aoife sets off down the Faery Path alone. She knows the rules. She must not eat the fae food, strike a bargain or leave the path. But she discovers a world far more terrifying and beautiful than she ever imagined.",
+            "And it doesn’t want her to leave.",
+          ],
+        }}
+        books={[
+          {
+            title: "the widow and the beast",
+            coverSrc: theWidowAndTheBeast,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/fb91ebf8-fd1a-11ec-8638-cfd1208557e7",
+          },
+          {
+            title: "crown of glass - coming april 2023",
+            coverSrc: crownOfGlass,
+          },
+        ]}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
           chipLabel: "Read Synopsis",
           chipPath: tabs.feathersOfSnowSynopsis.path,
           showChip: true,
@@ -191,67 +222,6 @@ export default function FantasyBooks({ tabs }) {
       />
       <Series
         spotlightedBook={{
-          coverSrc: slipperInTheSnow,
-          title: "Slipper in the Snow",
-          showTitle: true,
-          universalBookLink:
-            "https://storyoriginapp.com/universalbooklinks/1851b926-3314-11eb-96f7-a7d124477774",
-        }}
-        seriesOverview={{
-          title: "A Christmas Fairytale Short Story",
-          paragraphs: [
-            "Burge has always been famous for its spectacular Christmas Eve ball, and this year everyone knows it will be exceptional. The King lies on his deathbed, and Prince Simeon is looking for a wife. Princesses and ladies alike are flocking from around the world seeking his hand, but the only person he has eyes for is the mysterious stranger who appears from nowhere with a terrible secret.",
-          ],
-        }}
-        books={[
-          {
-            title: "slipper in the snow",
-            coverSrc: slipperInTheSnow,
-            universalBookLink:
-              "https://storyoriginapp.com/universalbooklinks/1851b926-3314-11eb-96f7-a7d124477774",
-          },
-          {
-            title: "nettles in the snow",
-            coverSrc: nettlesInTheSnow,
-            universalBookLink:
-              "https://storyoriginapp.com/universalbooklinks/6d5f08f8-3c9f-11eb-ba2e-a35ca568a51d",
-          },
-          {
-            title: "secrets in the snow",
-            coverSrc: secretsInTheSnow,
-            universalBookLink:
-              "https://storyoriginapp.com/universalbooklinks/bbb1875a-8e2b-11eb-82cf-b35b81295f4a",
-          },
-          {
-            title: "princess in the snow",
-            coverSrc: princessInTheSnow,
-            universalBookLink:
-              "https://storyoriginapp.com/universalbooklinks/df7e9d30-8e2b-11eb-aa59-574719e7870e",
-          },
-        ]}
-        showDivider
-      />
-      <Series
-        spotlightedBook={{
-          coverSrc: theFoxAndTheTrain,
-          title: "the fox and the train",
-          showTitle: false,
-          universalBookLink:
-            "https://storyoriginapp.com/universalbooklinks/8a715e44-1eb6-11ea-ac8d-a7e9588ab05d",
-        }}
-        seriesOverview={{
-          title: "The Fox and the Train",
-          paragraphs: [
-            "“Sometimes the most important battles are the ones that look like they cannot be won, but we fight anyway. Fight now, little one, or your fear will bring death.”",
-            "Isolated in a village surrounded by deep snow, thirteen year old Anna loses herself in the fairytales of the forbidding forest behind her house. Benny, an autistic inventor, becomes her only friend as she watches her family leave one by one.",
-            "When disaster strikes in the coal mine, men from the village are trapped underground, including Anna’s brother. The only train to the mine is destroyed and the adults of the village quickly lose hope for their loved ones.",
-            "But Anna and Benny refuse to give up and become the miners’ only chance of salvation, travelling through the dark forest alone. Between those frozen trees, things aren’t as they seem and soon Anna finds herself in a beautiful but dangerous fairytale of her own.",
-          ],
-        }}
-        showDivider
-      />
-      <Series
-        spotlightedBook={{
           coverSrc: enchantedWaters,
           title: "enchanted waters",
           showTitle: true,
@@ -331,35 +301,64 @@ export default function FantasyBooks({ tabs }) {
       />
       <Series
         spotlightedBook={{
-          coverSrc: theWidowAndTheBeast,
-          title: "the widow and the beast",
+          coverSrc: slipperInTheSnow,
+          title: "Slipper in the Snow",
           showTitle: true,
           universalBookLink:
-            "https://storyoriginapp.com/universalbooklinks/fb91ebf8-fd1a-11ec-8638-cfd1208557e7",
+            "https://storyoriginapp.com/universalbooklinks/1851b926-3314-11eb-96f7-a7d124477774",
         }}
         seriesOverview={{
-          title: "Kingdoms of the Faery Path",
+          title: "A Christmas Fairytale Short Story",
           paragraphs: [
-            "In this world, fairytale monsters are very real...",
-            "Faery has been under a curse for two hundred years, twisting its inhabitants into monsters. Now all who walk the Faery Path risk their life and their sanity.",
-            "Determined to find her missing husband, Aoife sets off down the Faery Path alone. She knows the rules. She must not eat the fae food, strike a bargain or leave the path. But she discovers a world far more terrifying and beautiful than she ever imagined.",
-            "And it doesn’t want her to leave.",
+            "Burge has always been famous for its spectacular Christmas Eve ball, and this year everyone knows it will be exceptional. The King lies on his deathbed, and Prince Simeon is looking for a wife. Princesses and ladies alike are flocking from around the world seeking his hand, but the only person he has eyes for is the mysterious stranger who appears from nowhere with a terrible secret.",
           ],
         }}
         books={[
           {
-            title: "the widow and the beast",
-            coverSrc: theWidowAndTheBeast,
+            title: "slipper in the snow",
+            coverSrc: slipperInTheSnow,
             universalBookLink:
-              "https://storyoriginapp.com/universalbooklinks/fb91ebf8-fd1a-11ec-8638-cfd1208557e7",
+              "https://storyoriginapp.com/universalbooklinks/1851b926-3314-11eb-96f7-a7d124477774",
           },
           {
-            title: "crown of glass - coming april 2023",
-            coverSrc: crownOfGlass,
+            title: "nettles in the snow",
+            coverSrc: nettlesInTheSnow,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/6d5f08f8-3c9f-11eb-ba2e-a35ca568a51d",
+          },
+          {
+            title: "secrets in the snow",
+            coverSrc: secretsInTheSnow,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/bbb1875a-8e2b-11eb-82cf-b35b81295f4a",
+          },
+          {
+            title: "princess in the snow",
+            coverSrc: princessInTheSnow,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/df7e9d30-8e2b-11eb-aa59-574719e7870e",
           },
         ]}
+        showDivider
       />
-      <div className={classes.initialPadding} />
+      <Series
+        spotlightedBook={{
+          coverSrc: theFoxAndTheTrain,
+          title: "the fox and the train",
+          showTitle: false,
+          universalBookLink:
+            "https://storyoriginapp.com/universalbooklinks/8a715e44-1eb6-11ea-ac8d-a7e9588ab05d",
+        }}
+        seriesOverview={{
+          title: "The Fox and the Train",
+          paragraphs: [
+            "“Sometimes the most important battles are the ones that look like they cannot be won, but we fight anyway. Fight now, little one, or your fear will bring death.”",
+            "Isolated in a village surrounded by deep snow, thirteen year old Anna loses herself in the fairytales of the forbidding forest behind her house. Benny, an autistic inventor, becomes her only friend as she watches her family leave one by one.",
+            "When disaster strikes in the coal mine, men from the village are trapped underground, including Anna’s brother. The only train to the mine is destroyed and the adults of the village quickly lose hope for their loved ones.",
+            "But Anna and Benny refuse to give up and become the miners’ only chance of salvation, travelling through the dark forest alone. Between those frozen trees, things aren’t as they seem and soon Anna finds herself in a beautiful but dangerous fairytale of her own.",
+          ],
+        }}
+      />
     </Underlay>
   );
 }

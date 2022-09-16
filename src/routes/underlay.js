@@ -10,14 +10,14 @@ const calculateUnderlayHeight = ({
   isLargeScreen,
 }) =>
   isLargeScreen
-    ? "45vh"
+    ? "48vh"
     : isMediumScreen
-    ? "45vh"
+    ? "48vh"
     : isSmallScreen
     ? "38vh"
     : isExtraSmallScreen
     ? "31vh"
-    : "45vh";
+    : "48vh";
 
 const useMuiStyles = makeStyles((theme) => ({
   underlay: (props) => ({
