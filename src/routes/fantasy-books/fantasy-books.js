@@ -22,6 +22,7 @@ import princessInTheSnow from "../../assets/images/covers/princess-in-the-snow-4
 import theFoxAndTheTrain from "../../assets/images/covers/the-fox-and-the-train-50.jpg";
 import enchantedWaters from "../../assets/images/covers/enchanted-waters-50.jpg";
 import enchantedForests from "../../assets/images/covers/enchanted-forests-60.jpg";
+import enchantedFlames from "../../assets/images/covers/enchanted-flames-50.jpg";
 import onceUponAName from "../../assets/images/covers/once upon a name.jpg";
 import windAndSilk from "../../assets/images/covers/wind-and-silk-40.jpg";
 import crownOfGlass from "../../assets/images/covers/crown-of-glass-60.jpg";
@@ -250,6 +251,12 @@ export default function FantasyBooks({ tabs }) {
             coverSrc: enchantedForests,
             universalBookLink:
               "https://storyoriginapp.com/universalbooklinks/c3045708-b594-11ec-a01d-2f0fad4b0613",
+          },
+          {
+            title: "enchanted flames",
+            coverSrc: enchantedFlames,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/dffe3b12-2a1f-11ed-b152-5f6a2568353d",
           },
         ]}
         showDivider
