@@ -83,6 +83,7 @@ export default function FantasyBooks({ tabs }) {
         spotlightedBook={{
           coverSrc: kingdomOfBirdsAndBeasts,
           title: "Kingdom of Birds and Beasts",
+          showTitle: false,
           universalBookLink:
             "https://storyoriginapp.com/universalbooklinks/1356076a-053b-11ed-8065-2753e514144d",
         }}
