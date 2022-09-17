@@ -23,7 +23,7 @@ import theFoxAndTheTrain from "../../assets/images/covers/the-fox-and-the-train-
 import enchantedWaters from "../../assets/images/covers/enchanted-waters-50.jpg";
 import enchantedForests from "../../assets/images/covers/enchanted-forests-60.jpg";
 import onceUponAName from "../../assets/images/covers/once upon a name.jpg";
-import girlsOfMightAndMagic from "../../assets/images/covers/girls-of-might-and-magic-80.jpg";
+import windAndSilk from "../../assets/images/covers/wind-and-silk-40.jpg";
 import crownOfGlass from "../../assets/images/covers/crown-of-glass-60.jpg";
 import theWidowAndTheBeast from "../../assets/images/covers/the-widow-and-the-beast-50.jpg";
 
@@ -281,17 +281,18 @@ export default function FantasyBooks({ tabs }) {
       />
       <Series
         spotlightedBook={{
-          coverSrc: girlsOfMightAndMagic,
-          title: "Girls of Might and Magic",
+          coverSrc: windAndSilk,
+          title: "Wind and Silk",
           showTitle: true,
-          universalBookLink: "https://books2read.com/u/bOREpK",
+          universalBookLink:
+            "https://storyoriginapp.com/universalbooklinks/3932e298-ed47-11ec-b7b6-fb74830476e0",
         }}
         seriesOverview={{
-          title: "An Anthology By Diverse Books with Magic",
+          title: "A Fantasy Short Story",
           paragraphs: [
-            "Find your might. Discover your magic.",
-            "A disabled teen tracks down an elusive sea beast. A young, Indian detective finds a magical artifact. A Black teen who can see the dead solves a murder mystery. An Ethiopian girl discovers magical secrets when she is kidnapped by her teacher. A teen survivor of a deadly plague realizes she and her robot companion are not alone.",
-            "Across realms, worlds, and dimensions we bring you sixteen fantasy and/or science fiction tales that explore the tribulations of growing up. Full of diverse characters and #ownvoices authors, the protagonists in these coming-of-age YA adventures will not only discover powerful magic but discover themselves along the way. Don’t miss this magical collection of stories about witches, fae, ghosts, vampires, werewolves, jinn, and more!",
+            "In a war-torn Empire, where dragons gather in the sky to gorge off human emotions, Fangying has led a sequestered life, so that her stutter and limp do not bring shame upon her family.",
+            "Now she must marry a man she has never met so that her father doesn’t get sent to war. It is her desperate hope to hide her condition from her new husband for at least their wedding night.",
+            "But when her husband unexpectedly steals her away to the battlefront, can she step out of the shadows and learn she is stronger than anyone ever dreamed?",
           ],
         }}
         showDivider
