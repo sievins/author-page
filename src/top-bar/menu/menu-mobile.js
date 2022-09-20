@@ -58,7 +58,7 @@ export default function MenuMobile({ tabs }) {
   const location = useLocation();
   const [open, setOpen] = React.useState(false);
 
-  const { activeIndex } = Object.values(tabs).find(
+  const { activeIndex, text } = Object.values(tabs).find(
     (tab) => tab.path === location.hash
   );
 
@@ -122,13 +122,7 @@ export default function MenuMobile({ tabs }) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" classes={{ root: classes.font }}>
-            {activeIndex === 1
-              ? "Fantasy Books"
-              : activeIndex === 2
-              ? "Christian Books"
-              : activeIndex === 3
-              ? "About"
-              : "Alice"}
+            {text}
           </Typography>
         </Toolbar>
       </AppBar>
