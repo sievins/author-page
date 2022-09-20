@@ -5,6 +5,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+b,
+strong {
+  font-family: "proxima-nova-bold", sans-serif;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -22,6 +27,12 @@ code {
   font-family: "proxima-nova-semibold";
   src: url("assets/fonts/proxima-nova-semibold.otf") format("opentype"),
     url("assets/fonts/proxima-nova-semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "proxima-nova-bold";
+  src: url("assets/fonts/proxima-nova-bold.ttf") format("truetype"),
+    url("assets/fonts/proxima-nova-bold.ttf") format("truetype");
 }
 
 /* Signature */
