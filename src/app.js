@@ -53,14 +53,17 @@ const tabs = {
   },
   feathersOfSnowSynopsis: {
     path: "#/feathers-of-snow-synopsis",
+    text: "Synopsis",
     title: preserveWhiteSpace("Feathers of Snow - Synopsis"),
   },
   feathersOfBloodSynopsis: {
     path: "#/feathers-of-blood-synopsis",
+    text: "Synopsis",
     title: preserveWhiteSpace("Feathers of Blood - Synopsis"),
   },
   contentAdvisory: {
     path: "#/content-advisory",
+    text: "Content Advisory",
     title: preserveWhiteSpace("Content  Advisory"),
   },
 };
