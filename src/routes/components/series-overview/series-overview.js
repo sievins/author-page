@@ -1,16 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core";
+import { Heading } from "../../../components";
 import { useStyles } from "../../../hooks";
 
 const useMuiStyles = makeStyles((theme) => ({
-  heading: {
-    fontFamily: "frieght-disp-bold",
-    fontSize: "calc(28px + 1.2vmin)",
-    color: theme.palette.text.secondary,
-  },
   text: {
     fontSize: "calc(8px + 1.2vmin)",
     marginBottom: theme.spacing(5),
@@ -27,9 +22,9 @@ export default function SeriesOverview({ title, paragraphs }) {
 
   return (
     <>
-      <Typography variant="h1" component="h1" className={classes.heading}>
+      <Heading variant="h2" component="h2">
         {title}
-      </Typography>
+      </Heading>
       <Grid
         container
         direction="column"

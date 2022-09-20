@@ -4,8 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
 import { useStyles } from "../../../hooks";
 import Chip from "../chip";
-import Fade from "./fade";
-import Image from "./image";
+import { Fade, Image } from "../../../components";
 
 const useMuiStyles = makeStyles((theme) => ({
   text: {
@@ -67,6 +66,7 @@ export default function SelectableBook({
       <Fade in={focus} opacity={0.7}>
         <Image
           src={coverSrc}
+          alt="Book cover"
           className={classNames.image}
           style={style}
           imageDimensions={imageDimensions}

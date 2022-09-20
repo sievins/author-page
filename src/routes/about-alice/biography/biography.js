@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "../../../components";
 import { useStyles } from "../../../hooks";
 
 const useMuiStyles = makeStyles((theme) => ({

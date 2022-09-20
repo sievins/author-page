@@ -1,8 +1,7 @@
 import React from "react";
 import { useStyles } from "../../hooks";
 import { makeStyles } from "@material-ui/core/styles";
-import Underlay from "../underlay";
-import { Series } from "../components";
+import { Series, Underlay } from "../components";
 import sarahsFootsteps from "../../assets/images/covers/sarahs-footsteps-60.jpg";
 import leaving from "../../assets/images/covers/leaving-50.jpg";
 

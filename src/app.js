@@ -5,6 +5,7 @@ import ScrollToTop from "./scroll-to-top";
 import NewsletterSnackbar from "./newsletter-snackbar";
 import TopBar from "./top-bar";
 import Routes from "./routes";
+import BottomBar from "./bottom-bar";
 
 const useStyles = makeStyles((theme) => ({
   app: {
@@ -24,6 +25,7 @@ const preserveWhiteSpace = (string) => (
   <span style={{ whiteSpace: "pre" }}>{string}</span>
 );
 
+// TODO Move this into React Context and use proper routing
 const tabs = {
   home: {
     path: "",
@@ -57,6 +59,10 @@ const tabs = {
     path: "#/feathers-of-blood-synopsis",
     title: preserveWhiteSpace("Feathers of Blood - Synopsis"),
   },
+  contentAdvisory: {
+    path: "#/content-advisory",
+    title: preserveWhiteSpace("Content  Advisory"),
+  },
 };
 
 App.propTypes = {
@@ -72,6 +78,7 @@ export default function App({ setTopBarHeight }) {
       <NewsletterSnackbar />
       <TopBar tabs={tabs} setTopBarHeight={setTopBarHeight} />
       <Routes tabs={tabs} />
+      <BottomBar tabs={tabs} />
     </div>
   );
 }

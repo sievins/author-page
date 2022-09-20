@@ -1,9 +1,8 @@
 import React from "react";
-import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import { useStyles } from "../../hooks";
-import Underlay from "../underlay";
-import { Series } from "../components";
+import { Series, Underlay } from "../components";
+import { Link } from "../../components";
 import feathersOfSnow from "../../assets/images/covers/feathers-of-snow-50.jpg";
 
 const useMuiStyles = makeStyles((theme) => ({
