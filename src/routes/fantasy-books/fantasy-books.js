@@ -72,8 +72,10 @@ export default function FantasyBooks({ tabs }) {
               "https://storyoriginapp.com/universalbooklinks/fb91ebf8-fd1a-11ec-8638-cfd1208557e7",
           },
           {
-            title: "crown of glass - coming april 2023",
+            title: "crown of glass",
             coverSrc: crownOfGlass,
+            universalBookLink:
+              "https://storyoriginapp.com/universalbooklinks/ff015e76-6436-11ed-927d-6f923dbdbd9a",
           },
         ]}
         showDivider
