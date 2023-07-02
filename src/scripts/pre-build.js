@@ -7,10 +7,11 @@ const del = require("del");
 
 const coversDirectory = path.resolve(__dirname, "../assets/images/covers");
 const metaFileName = "meta.json";
+const macMetaData = ".DS_Store";
 
 const coverNames = fs
   .readdirSync(coversDirectory)
-  .filter((name) => name !== metaFileName);
+  .filter((name) => name !== metaFileName && name !== macMetaData);
 
 const dimensions = coverNames.map((coverName) => {
   const { width, height } = probe.sync(

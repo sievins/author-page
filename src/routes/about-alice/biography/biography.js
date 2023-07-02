@@ -43,15 +43,15 @@ export default function Biography() {
   return (
     <div className={classes.container}>
       <p>
-        Alice is a USA Today bestselling author. She is also an award winning
-        international and Barnes and Noble bestseller.
+        Alice is a USA Today bestselling author who loves to write low spice
+        young adult fantasy and fairytales.
       </p>
       <p>
-        She lives in Bristol, England. She is wife to Sam, mummy to their
-        toddler and owns the best dog in the world, Summer. She has loved
-        fantasy all her life and is currently writing three fairytale
-        retellings. When she's not off galavanting in other worlds, she loves
-        walking the dog and spending time with her church family.
+        She lives in Bristol, England. She is wife to Sam, mummy to their son
+        and owns the best dog in the world, Summer. She has loved fantasy all
+        her life and grew up on Robert Jordan and later, Brandon Sanderson. When
+        she's not off galavanting in other worlds, she loves walking the dog and
+        spending time with her church family.
       </p>
       <p>Alice hopes to change the world for the better, one word at a time.</p>
       <p>
