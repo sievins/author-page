@@ -8,6 +8,7 @@ import feathersOfSnow from "../../assets/images/covers/feathers-of-snow-50.jpg";
 import feathersOfBlood from "../../assets/images/covers/feathers-of-blood-50.jpg";
 import kingdomOfFeathers from "../../assets/images/covers/kingdom-of-feathers-50.jpg";
 import theFlawedPrincess from "../../assets/images/covers/the-flawed-princess-50.jpg";
+import theGoldenPrince from "../../assets/images/covers/the-golden-prince-50.jpg";
 import queenAvan from "../../assets/images/covers/queen-avan.jpg";
 import avansGift from "../../assets/images/covers/avans-gift-50.jpg";
 import avansCurse from "../../assets/images/covers/avans-curse-50.jpg";
@@ -141,6 +142,25 @@ export default function FantasyBooks({ tabs }) {
             "When she is caught up in a deadly rebellion, Violet is taken hostage by the king and dragged to the capital. A prisoner deprived of friends and family, she is thrown into a dangerous world of politics and strange magic, where men and beasts are bonded together. Violet realises she must quickly learn the rules of the castle in order to be a voice for her forgotten province.",
             "But the bonds that tie people are fragile, and true evil lurks in the shadows of the castle. As war and assassination threaten to break the kingdom apart, Violet realises that to save it, she must learn to forgive her captor.",
             "And maybe even allow herself to be loved.",
+          ],
+        }}
+        showDivider
+      />
+      <Series
+        spotlightedBook={{
+          coverSrc: theGoldenPrince,
+          title: "the golden prince",
+          showTitle: false,
+          universalBookLink:
+            "https://storyoriginapp.com/universalbooklinks/d0d6f0ac-e8ec-11ed-96fa-4f3fdba9194d",
+        }}
+        seriesOverview={{
+          title: "The Golden Prince: A Rapunzel Retelling",
+          paragraphs: [
+            "A perfect prince. An engagement to save a kingdom. Too bad it’s all a lie.",
+            "Prince Thomas has always been the perfect prince, but now that his kingdom is falling to famine, he must prove his worth and restore the blessing of Spring. All he has to do is find a mysterious woman from a painting and marry her. It’s a quest he’s been born for. He has everything: the looks, the talent, the perseverance. No matter what peril she is in, he will find and rescue her. And he’ll do so with style.",
+            "If Maisie has learned one lesson in her life, it’s not to trust anybody. Having been hurt countless times, she lets people see her mask and no deeper. Her practice at deception makes her a master thief, but now she is forgetting which parts of her are real. However, one thing is certain: she does not need any prince to rescue her. In fact, she needs nobody at all.",
+            "The hounds of Winter are gathering, leaving death in their wake. The famine is spreading. If Prince Thomas doesn’t marry Maisie, the kingdom will fall. But how can he learn to love somebody with a shattered heart?",
           ],
         }}
         showDivider
