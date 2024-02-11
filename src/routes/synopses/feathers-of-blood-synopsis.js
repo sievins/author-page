@@ -22,8 +22,7 @@ export default function FeathersOfBloodSynopsis() {
           coverSrc: feathersOfBlood,
           title: "feathers of blood",
           showTitle: true,
-          universalBookLink:
-            "https://storyoriginapp.com/universalbooklinks/f9375808-8e2a-11eb-81ee-d7f4d46dc19f",
+          universalBookLink: "https://buy.bookfunnel.com/toob0lyzr1",
         }}
         seriesOverview={{
           title: "Synopsis",
@@ -80,7 +79,7 @@ export default function FeathersOfBloodSynopsis() {
             [
               "The story continues in ",
               <Link
-                href="https://storyoriginapp.com/universalbooklinks/653c193c-852c-11ec-bbb9-8f1c86eb3df8"
+                href="https://buy.bookfunnel.com/tv6fratj19"
                 target="_blank"
                 rel="noreferrer"
               >
