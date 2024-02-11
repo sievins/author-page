@@ -22,8 +22,7 @@ export default function FeathersOfSnowSynopsis() {
           coverSrc: feathersOfSnow,
           title: "feathers of snow",
           showTitle: true,
-          universalBookLink:
-            "https://storyoriginapp.com/universalbooklinks/40987692-2912-11eb-8eba-9744d8f5a192",
+          universalBookLink: "https://buy.bookfunnel.com/78bqhugido",
         }}
         seriesOverview={{
           title: "Synopsis",
@@ -53,7 +52,7 @@ export default function FeathersOfSnowSynopsis() {
             [
               "The story continues in ",
               <Link
-                href="https://storyoriginapp.com/universalbooklinks/f9375808-8e2a-11eb-81ee-d7f4d46dc19f"
+                href="https://buy.bookfunnel.com/toob0lyzr1"
                 target="_blank"
                 rel="noreferrer"
               >
